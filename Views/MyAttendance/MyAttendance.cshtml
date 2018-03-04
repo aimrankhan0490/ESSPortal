@@ -1,0 +1,87 @@
+﻿@using Helper
+@model IEnumerable<ESSPortal.DTOModels.DTOMyAttendance>
+
+@{
+    ViewBag.Title = "MyAttendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+
+            <div class="x_content" style="display: block;">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3">@Resources.getDescriptionBykey("From Date")</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="from_date" required="required" class="single_cal4 form-control col-md-7 col-xs-12">
+                            <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3">@Resources.getDescriptionBykey("To Date")</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="to_date" required="required" class="single_cal4 form-control col-md-7 col-xs-12">
+                            <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    @*<div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3">Attendnce for</label>
+                            <div class="col-md-6 col-sm-6">
+                                <select class="select2_single form-control" name="for" tabindex="-1">
+
+                                    <option value="worker">Worker</option>
+                                    <option value="team">Team</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3">Payslip state</label>
+                            <div class="col-md-6 col-sm-6">
+                                <select class="select2_single form-control" name="for" tabindex="-1">
+
+                                    <option value="pending">Pending</option>
+                                    <option value="returned">Returned</option>
+                                </select>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="clearfix"></div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="panel panel-default col-md-6 no-padding">
+                                <div class="panel-heading">@Resources.getDescriptionBykey("Earning")</div>
+                                <div class="panel-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>@Resources.getDescriptionBykey("Date")</th>
+                                                <th>@Resources.getDescriptionBykey("Time")</th>
+                                                <th>@Resources.getDescriptionBykey("Event")</th>
+                                                <th>@Resources.getDescriptionBykey("Excused")</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Resources.getDescriptionBykey("Allowance")</td>
+                                                <td>@Resources.getDescriptionBykey("Housing")</td>
+                                                <td>2000</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <!--- ----------------------------------------------------------- -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------------------------------------------------------- -->

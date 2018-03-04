@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0f04c6e7-582a-4d84-86d7-8eb176205da0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="xppservice1.disco" MetadataType="Disco" ID="4567e620-b6f3-4ec7-a806-9064deef88db" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?disco" />
+    <MetadataFile FileName="xppservice2.wsdl" MetadataType="Wsdl" ID="3fff52a5-443d-40f5-bebb-eb45dc022102" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="xppservice9.xsd" MetadataType="Schema" ID="45e3e616-e337-4abf-8018-1150e9f513a4" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd5" />
+    <MetadataFile FileName="xppservice91.xsd" MetadataType="Schema" ID="f8b33e49-ee6f-457a-9433-d1c9175d58f7" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd4" />
+    <MetadataFile FileName="xppservice92.xsd" MetadataType="Schema" ID="543dba1d-c0ec-421e-90b7-87b83ae84e23" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd7" />
+    <MetadataFile FileName="xppservice93.xsd" MetadataType="Schema" ID="a949254a-ee8a-4acf-af18-ba113365f2d4" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd6" />
+    <MetadataFile FileName="xppservice94.xsd" MetadataType="Schema" ID="d372bced-2466-492c-8af2-6e163f7366b2" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd1" />
+    <MetadataFile FileName="xppservice95.xsd" MetadataType="Schema" ID="57d81479-b5bc-405b-a126-ec790b7cea53" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd0" />
+    <MetadataFile FileName="xppservice96.xsd" MetadataType="Schema" ID="193b8f8a-2ffb-4dd3-aafc-5032b28120aa" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd3" />
+    <MetadataFile FileName="xppservice97.xsd" MetadataType="Schema" ID="c79545f7-b6a4-4190-ba24-ba8b799b9191" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd2" />
+    <MetadataFile FileName="xppservice21.wsdl" MetadataType="Wsdl" ID="dd057b2f-21fe-4275-b022-3d67d514f85e" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="RoutingService1.wsdl" MetadataType="Wsdl" ID="ee41770b-60cb-40b0-8711-54f421effdae" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?wsdl" />
+    <MetadataFile FileName="xppservice98.xsd" MetadataType="Schema" ID="f03264ea-08c3-4d1d-b165-6e334fa8ede9" SourceId="1" SourceUrl="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

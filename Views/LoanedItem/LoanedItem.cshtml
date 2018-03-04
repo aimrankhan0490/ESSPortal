@@ -1,0 +1,88 @@
+﻿@using Helper
+@model IEnumerable<ESSPortal.DTOModels.DTOLoanedItems>
+
+@{
+    ViewBag.Title = "LoanedItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+
+            <div class="x_content" style="display: block;">
+                <div class="row">
+
+                    <div class="form-group col-md-12">
+                        <label class="control-label col-md-3 col-sm-3">@Resources.getDescriptionBykey("Pending/Retun")</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select class="select2_single form-control" name="for" tabindex="-1">
+
+                                <option value="pending">@Resources.getDescriptionBykey("Pending")</option>
+                                <option value="returned">@Resources.getDescriptionBykey("Returned")</option>
+                            </select>
+                        </div>
+                    </div>
+                    @*<div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3">Attendnce for</label>
+                            <div class="col-md-6 col-sm-6">
+                                <select class="select2_single form-control" name="for" tabindex="-1">
+
+                                    <option value="worker">Worker</option>
+                                    <option value="team">Team</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-3 col-sm-3">Payslip state</label>
+                            <div class="col-md-6 col-sm-6">
+                                <select class="select2_single form-control" name="for" tabindex="-1">
+
+                                    <option value="pending">Pending</option>
+                                    <option value="returned">Returned</option>
+                                </select>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="clearfix"></div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            @*<div class="panel panel-default col-md-6 no-padding">*@
+                            <div class="panel-heading"><b>@Resources.getDescriptionBykey("Loaned Items")</b></div>
+                            <div class="panel-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>@Resources.getDescriptionBykey("Loan Item")</th>
+                                            <th>@Resources.getDescriptionBykey("Description")</th>
+                                            <th>@Resources.getDescriptionBykey("Loan Date")</th>
+                                            <th>@Resources.getDescriptionBykey("Return Date")</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                            {
+                                            <tr>
+                                                <td>@item.LoanItem</td>
+                                                <td>@item.Description</td>
+                                                <td>@item.LoanDate</td>
+                                                <td>@item.ReturnDate</td>
+                                            </tr>
+                                            }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            @*</div>*@
+                            <!--- ----------------------------------------------------------- -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

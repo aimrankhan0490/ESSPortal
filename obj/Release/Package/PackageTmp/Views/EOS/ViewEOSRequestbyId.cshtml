@@ -1,0 +1,163 @@
+﻿@using Helper
+@model ESSPortal.ESSWebService.EosRequest
+
+@{
+    ViewBag.Title = "ViewEOSRequestbyId";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("EOS Request")</h2>
+        @*<ul class="nav navbar-right panel_toolbox">
+            <li>
+                <div class="btn-group" style="width:100%">
+                    <button type="button" class="btn btn-default col-md-8">@Resources.getDescriptionBykey("Action")</button>
+                    <button type="button" class="btn btn-default dropdown-toggle col-md-4" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">@Resources.getDescriptionBykey("Toggle Dropdown")</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" style="background: #FFFFFF">
+                        <li>
+                            <a id="btnhistory" class="accept_leave" style="">@Resources.getDescriptionBykey("View History")</a>
+                        </li>
+
+                        <li>
+                                <a href="#" class="reject_leave">Reject</a>
+                            </li>
+
+                            <li>
+                                <a href="history.html" class="history_leave">View History</a>
+                            </li>
+
+                    </ul>
+                </div>  <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>*@
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4" for="start_date">
+                    @Resources.getDescriptionBykey("Eos Request Id ")<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" id="fullname" value="@Model.EosRequestId" class="form-control" readonly>
+
+                </div>
+            </div>
+            <div class="form-group  col-md-4">
+                <label class="control-label col-md-4 col-sm-4" for="end_date">
+                    @Resources.getDescriptionBykey("Reason Code") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" id="ReasonCode" value="@Model.ReasonCode" class="form-control" readonly>
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">
+                    @Resources.getDescriptionBykey("Transaction Date") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" id="RequestDate" value="@Model.RequestDate.ToShortDateString()" class="form-control" readonly>
+                    <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Eos Type")</label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" id="EOSRequestType" value="@Model.EOSRequestType.ToString()" class="form-control" readonly>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Comments")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Comment") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @*<textarea id="comment" required="required" value="@Model.Comments" name="comment" class="form-control col-md-7 col-xs-12"></textarea>*@
+                    <div>@Model.Comments</div>
+                </div>
+            </div>
+
+            @*<div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    Attachment <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="file" id="fileupload" accept="image/*" name="file" />
+
+                </div>
+            </div>*@
+        </form>
+    </div>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Workflow History")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Workflow") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div>@Model.NameAr</div>
+                    @* <textarea id="comment" required="required" name="comment" class="form-control col-md-7 col-xs-12"></textarea>*@
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        var id = getUrlVars()["EOSid"];
+        $('#btnhistory').click(function () {
+            var url = window.location.pathname.split("/");
+            var controller = url[1];
+            // alert(data1.split(' ')[1]);
+            var url = "/WorkFlow/ViewWorkflowHistorybyType?Type=" + controller + "&Id=" + id;
+            window.location.href = url;
+
+        });
+</script>

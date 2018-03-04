@@ -1,0 +1,2092 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/netfx/2009/05/routing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://tempuri.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RoutingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="serviceEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSAttendanceInfoServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSBankInfoServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSBenefitsInfoService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSBusinessTripRequestServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSDashboardServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSDependentInfoServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSEosRequestServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSExcuseRequestServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSGeneralRequestService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSIdentificationInfoServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSLeaveRequestServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSLoanRequestServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSLoginServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSPaySlipInfoService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSPersonalInfoServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_SDSWorkflowService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/netfx/2009/05/routing" location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="http://tempuri.org" location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?wsdl=wsdl1" />
+  <wsdl:types />
+  <wsdl:binding name="serviceEndpoint" type="i0:IRequestReplyRouter">
+    <wsp:PolicyReference URI="#serviceEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSAttendanceInfoServices" type="i1:SDSAttendanceInfoServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSAttendanceInfoServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAttendanceList">
+      <soap:operation soapAction="http://tempuri.org/SDSAttendanceInfoServices/getAttendanceList" style="document" />
+      <wsdl:input name="SDSAttendanceInfoServicesGetAttendanceListRequest">
+        <soap:header message="i1:SDSAttendanceInfoServicesGetAttendanceListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSAttendanceInfoServicesGetAttendanceListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getManagersTeamList">
+      <soap:operation soapAction="http://tempuri.org/SDSAttendanceInfoServices/getManagersTeamList" style="document" />
+      <wsdl:input name="SDSAttendanceInfoServicesGetManagersTeamListRequest">
+        <soap:header message="i1:SDSAttendanceInfoServicesGetManagersTeamListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSAttendanceInfoServicesGetManagersTeamListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="showTeamList">
+      <soap:operation soapAction="http://tempuri.org/SDSAttendanceInfoServices/showTeamList" style="document" />
+      <wsdl:input name="SDSAttendanceInfoServicesShowTeamListRequest">
+        <soap:header message="i1:SDSAttendanceInfoServicesShowTeamListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSAttendanceInfoServicesShowTeamListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAttendance">
+      <soap:operation soapAction="http://tempuri.org/SDSAttendanceInfoServices/getAttendance" style="document" />
+      <wsdl:input name="SDSAttendanceInfoServicesGetAttendanceRequest">
+        <soap:header message="i1:SDSAttendanceInfoServicesGetAttendanceRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSAttendanceInfoServicesGetAttendanceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSBankInfoServices" type="i1:SDSBankInfoServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSBankInfoServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllBankInfoList">
+      <soap:operation soapAction="http://tempuri.org/SDSBankInfoServices/getAllBankInfoList" style="document" />
+      <wsdl:input name="SDSBankInfoServicesGetAllBankInfoListRequest">
+        <soap:header message="i1:SDSBankInfoServicesGetAllBankInfoListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBankInfoServicesGetAllBankInfoListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBankInfo">
+      <soap:operation soapAction="http://tempuri.org/SDSBankInfoServices/getBankInfo" style="document" />
+      <wsdl:input name="SDSBankInfoServicesGetBankInfoRequest">
+        <soap:header message="i1:SDSBankInfoServicesGetBankInfoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBankInfoServicesGetBankInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSBenefitsInfoService" type="i1:SDSBenefitsInfoService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSBenefitsInfoService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllowanceDeductionCostList">
+      <soap:operation soapAction="http://tempuri.org/SDSBenefitsInfoService/getAllowanceDeductionCostList" style="document" />
+      <wsdl:input name="SDSBenefitsInfoServiceGetAllowanceDeductionCostListRequest">
+        <soap:header message="i1:SDSBenefitsInfoServiceGetAllowanceDeductionCostListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBenefitsInfoServiceGetAllowanceDeductionCostListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBenefitsInfo">
+      <soap:operation soapAction="http://tempuri.org/SDSBenefitsInfoService/getBenefitsInfo" style="document" />
+      <wsdl:input name="SDSBenefitsInfoServiceGetBenefitsInfoRequest">
+        <soap:header message="i1:SDSBenefitsInfoServiceGetBenefitsInfoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBenefitsInfoServiceGetBenefitsInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBenefitsAndAllowDeduList">
+      <soap:operation soapAction="http://tempuri.org/SDSBenefitsInfoService/getBenefitsAndAllowDeduList" style="document" />
+      <wsdl:input name="SDSBenefitsInfoServiceGetBenefitsAndAllowDeduListRequest">
+        <soap:header message="i1:SDSBenefitsInfoServiceGetBenefitsAndAllowDeduListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBenefitsInfoServiceGetBenefitsAndAllowDeduListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSBusinessTripRequestServices" type="i1:SDSBusinessTripRequestServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSBusinessTripRequestServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="editBusinessTripRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/editBusinessTripRequest" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesEditBusinessTripRequestRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesEditBusinessTripRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesEditBusinessTripRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/Cancel" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesCancelRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesCancelRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesCancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createBusinessTripRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/createBusinessTripRequest" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesCreateBusinessTripRequestRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesCreateBusinessTripRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesCreateBusinessTripRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlternateWorker">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getAlternateWorker" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetAlternateWorkerRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetAlternateWorkerRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetAlternateWorkerResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBusinessTripReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getAllBusinessTripReqeust" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetAllBusinessTripReqeustRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetAllBusinessTripReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetAllBusinessTripReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/Approve" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesApproveRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesApproveRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesApproveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getReasonCodes" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetReasonCodesRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetReasonCodesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetReasonCodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes_Lookup">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getReasonCodes_Lookup" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetReasonCodes_LookupRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetReasonCodes_LookupRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetReasonCodes_LookupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDestination_Lookup">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getDestination_Lookup" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetDestination_LookupRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetDestination_LookupRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetDestination_LookupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDestination">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getDestination" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetDestinationRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetDestinationRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetDestinationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/Delete" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesDeleteRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesDeleteRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesDeleteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlternateWorker_Lookup">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getAlternateWorker_Lookup" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetAlternateWorker_LookupRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetAlternateWorker_LookupRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetAlternateWorker_LookupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBusinessTripReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getBusinessTripReqeust" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetBusinessTripReqeustRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetBusinessTripReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetBusinessTripReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowList">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getPendingWorkflowList" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetPendingWorkflowListRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetPendingWorkflowListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetPendingWorkflowListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyDetails">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getPolicyDetails" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetPolicyDetailsRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetPolicyDetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetPolicyDetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowHistory">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getWorkflowHistory" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetWorkflowHistoryRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetWorkflowHistoryRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetWorkflowHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPerdiemAmount">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/getPerdiemAmount" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesGetPerdiemAmountRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesGetPerdiemAmountRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesGetPerdiemAmountResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/SDSBusinessTripRequestServices/Reject" style="document" />
+      <wsdl:input name="SDSBusinessTripRequestServicesRejectRequest">
+        <soap:header message="i1:SDSBusinessTripRequestServicesRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSBusinessTripRequestServicesRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSDashboardServices" type="i1:SDSDashboardServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSDashboardServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDashboard">
+      <soap:operation soapAction="http://tempuri.org/SDSDashboardServices/getDashboard" style="document" />
+      <wsdl:input name="SDSDashboardServicesGetDashboardRequest">
+        <soap:header message="i1:SDSDashboardServicesGetDashboardRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSDashboardServicesGetDashboardResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSDependentInfoServices" type="i1:SDSDependentInfoServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSDependentInfoServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllDependentInfoList">
+      <soap:operation soapAction="http://tempuri.org/SDSDependentInfoServices/getAllDependentInfoList" style="document" />
+      <wsdl:input name="SDSDependentInfoServicesGetAllDependentInfoListRequest">
+        <soap:header message="i1:SDSDependentInfoServicesGetAllDependentInfoListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSDependentInfoServicesGetAllDependentInfoListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDependentInfo">
+      <soap:operation soapAction="http://tempuri.org/SDSDependentInfoServices/getDependentInfo" style="document" />
+      <wsdl:input name="SDSDependentInfoServicesGetDependentInfoRequest">
+        <soap:header message="i1:SDSDependentInfoServicesGetDependentInfoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSDependentInfoServicesGetDependentInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSEosRequestServices" type="i1:SDSEosRequestServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSEosRequestServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="editEosRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/editEosRequest" style="document" />
+      <wsdl:input name="SDSEosRequestServicesEditEosRequestRequest">
+        <soap:header message="i1:SDSEosRequestServicesEditEosRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesEditEosRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyDetails">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getPolicyDetails" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetPolicyDetailsRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetPolicyDetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetPolicyDetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createEosRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/createEosRequest" style="document" />
+      <wsdl:input name="SDSEosRequestServicesCreateEosRequestRequest">
+        <soap:header message="i1:SDSEosRequestServicesCreateEosRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesCreateEosRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEosReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getAllEosReqeust" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetAllEosReqeustRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetAllEosReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetAllEosReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/Cancel" style="document" />
+      <wsdl:input name="SDSEosRequestServicesCancelRequest">
+        <soap:header message="i1:SDSEosRequestServicesCancelRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesCancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/Delete" style="document" />
+      <wsdl:input name="SDSEosRequestServicesDeleteRequest">
+        <soap:header message="i1:SDSEosRequestServicesDeleteRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesDeleteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEosReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getEosReqeust" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetEosReqeustRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetEosReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetEosReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowHistory">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getWorkflowHistory" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetWorkflowHistoryRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetWorkflowHistoryRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetWorkflowHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getReasonCodes" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetReasonCodesRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetReasonCodesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetReasonCodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/Reject" style="document" />
+      <wsdl:input name="SDSEosRequestServicesRejectRequest">
+        <soap:header message="i1:SDSEosRequestServicesRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/Approve" style="document" />
+      <wsdl:input name="SDSEosRequestServicesApproveRequest">
+        <soap:header message="i1:SDSEosRequestServicesApproveRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesApproveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowList">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getPendingWorkflowList" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetPendingWorkflowListRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetPendingWorkflowListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetPendingWorkflowListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEosTypes">
+      <soap:operation soapAction="http://tempuri.org/SDSEosRequestServices/getEosTypes" style="document" />
+      <wsdl:input name="SDSEosRequestServicesGetEosTypesRequest">
+        <soap:header message="i1:SDSEosRequestServicesGetEosTypesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSEosRequestServicesGetEosTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSExcuseRequestServices" type="i1:SDSExcuseRequestServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSExcuseRequestServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getWorkflowHistory">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getWorkflowHistory" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetWorkflowHistoryRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetWorkflowHistoryRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetWorkflowHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/Reject" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesRejectRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editExcuseRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/editExcuseRequest" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesEditExcuseRequestRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesEditExcuseRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesEditExcuseRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExcuseReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getExcuseReqeust" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetExcuseReqeustRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetExcuseReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetExcuseReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExcuseTypeId">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getExcuseTypeId" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetExcuseTypeIdRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetExcuseTypeIdRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetExcuseTypeIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/Cancel" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesCancelRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesCancelRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesCancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createExcuseRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/createExcuseRequest" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesCreateExcuseRequestRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesCreateExcuseRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesCreateExcuseRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAttendanceLogList">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getAttendanceLogList" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetAttendanceLogListRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetAttendanceLogListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetAttendanceLogListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExcuseTypeIdByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getExcuseTypeIdByNature" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetExcuseTypeIdByNatureRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetExcuseTypeIdByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetExcuseTypeIdByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowListByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getPendingWorkflowListByNature" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetPendingWorkflowListByNatureRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetPendingWorkflowListByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetPendingWorkflowListByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasAttendanceLogLookup">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/hasAttendanceLogLookup" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesHasAttendanceLogLookupRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesHasAttendanceLogLookupRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesHasAttendanceLogLookupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createExcuseRequestByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/createExcuseRequestByNature" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesCreateExcuseRequestByNatureRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesCreateExcuseRequestByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesCreateExcuseRequestByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/Delete" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesDeleteRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesDeleteRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesDeleteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/Approve" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesApproveRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesApproveRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesApproveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExcuseCourseTypeId">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getExcuseCourseTypeId" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetExcuseCourseTypeIdRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetExcuseCourseTypeIdRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetExcuseCourseTypeIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowList">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getPendingWorkflowList" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetPendingWorkflowListRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetPendingWorkflowListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetPendingWorkflowListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllExcuseReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getAllExcuseReqeust" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetAllExcuseReqeustRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetAllExcuseReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetAllExcuseReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyDetails">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getPolicyDetails" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetPolicyDetailsRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetPolicyDetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetPolicyDetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllExcuseReqeustByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getAllExcuseReqeustByNature" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetAllExcuseReqeustByNatureRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetAllExcuseReqeustByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetAllExcuseReqeustByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExcuseCourseLocation">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getExcuseCourseLocation" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetExcuseCourseLocationRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetExcuseCourseLocationRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetExcuseCourseLocationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes">
+      <soap:operation soapAction="http://tempuri.org/SDSExcuseRequestServices/getReasonCodes" style="document" />
+      <wsdl:input name="SDSExcuseRequestServicesGetReasonCodesRequest">
+        <soap:header message="i1:SDSExcuseRequestServicesGetReasonCodesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSExcuseRequestServicesGetReasonCodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSGeneralRequestService" type="i1:SDSGeneralRequestService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSGeneralRequestService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getGeneralRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getGeneralRequest" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetGeneralRequestRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetGeneralRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetGeneralRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/ChangeRequest" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceChangeRequestRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceChangeRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceChangeRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowList">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getPendingWorkflowList" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetPendingWorkflowListRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetPendingWorkflowListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetPendingWorkflowListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowListByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getPendingWorkflowListByNature" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetPendingWorkflowListByNatureRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetPendingWorkflowListByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetPendingWorkflowListByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/Reject" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceRejectRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestIds">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getRequestIds" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetRequestIdsRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetRequestIdsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetRequestIdsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EditGeneralRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/EditGeneralRequest" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceEditGeneralRequestRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceEditGeneralRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceEditGeneralRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRequestIdsByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getRequestIdsByNature" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetRequestIdsByNatureRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetRequestIdsByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetRequestIdsByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowHistory">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getWorkflowHistory" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetWorkflowHistoryRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetWorkflowHistoryRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetWorkflowHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/Delete" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceDeleteRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceDeleteRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceDeleteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createGeneralRequestByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/createGeneralRequestByNature" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceCreateGeneralRequestByNatureRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceCreateGeneralRequestByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceCreateGeneralRequestByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createGeneralRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/createGeneralRequest" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceCreateGeneralRequestRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceCreateGeneralRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceCreateGeneralRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllGeneralRequestList">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getAllGeneralRequestList" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetAllGeneralRequestListRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetAllGeneralRequestListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetAllGeneralRequestListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getReasonCodes" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetReasonCodesRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetReasonCodesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetReasonCodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/Cancel" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceCancelRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceCancelRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceCancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/Approve" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceApproveRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceApproveRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceApproveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllGeneralRequestListByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getAllGeneralRequestListByNature" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetAllGeneralRequestListByNatureRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetAllGeneralRequestListByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetAllGeneralRequestListByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyDetails">
+      <soap:operation soapAction="http://tempuri.org/SDSGeneralRequestService/getPolicyDetails" style="document" />
+      <wsdl:input name="SDSGeneralRequestServiceGetPolicyDetailsRequest">
+        <soap:header message="i1:SDSGeneralRequestServiceGetPolicyDetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSGeneralRequestServiceGetPolicyDetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSIdentificationInfoServices" type="i1:SDSIdentificationInfoServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSIdentificationInfoServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllIdentificationList">
+      <soap:operation soapAction="http://tempuri.org/SDSIdentificationInfoServices/getAllIdentificationList" style="document" />
+      <wsdl:input name="SDSIdentificationInfoServicesGetAllIdentificationListRequest">
+        <soap:header message="i1:SDSIdentificationInfoServicesGetAllIdentificationListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSIdentificationInfoServicesGetAllIdentificationListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getIdentificationInfo">
+      <soap:operation soapAction="http://tempuri.org/SDSIdentificationInfoServices/getIdentificationInfo" style="document" />
+      <wsdl:input name="SDSIdentificationInfoServicesGetIdentificationInfoRequest">
+        <soap:header message="i1:SDSIdentificationInfoServicesGetIdentificationInfoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSIdentificationInfoServicesGetIdentificationInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSLeaveRequestServices" type="i1:SDSLeaveRequestServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSLeaveRequestServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/Cancel" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesCancelRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesCancelRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesCancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createLeaveRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/createLeaveRequest" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesCreateLeaveRequestRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesCreateLeaveRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesCreateLeaveRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTicketBalance">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getTicketBalance" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetTicketBalanceRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetTicketBalanceRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetTicketBalanceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLeaveTypeId_2">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getLeaveTypeId_2" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetLeaveTypeId_2Request">
+        <soap:header message="i1:SDSLeaveRequestServicesGetLeaveTypeId_2Request_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetLeaveTypeId_2Response">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/Reject" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesRejectRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getleaveRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getleaveRequest" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetleaveRequestRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetleaveRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetleaveRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowByNatureList">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getPendingWorkflowByNatureList" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetPendingWorkflowByNatureListRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetPendingWorkflowByNatureListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetPendingWorkflowByNatureListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLeaveTypeId">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getLeaveTypeId" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetLeaveTypeIdRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetLeaveTypeIdRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetLeaveTypeIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowHistory">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getWorkflowHistory" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetWorkflowHistoryRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetWorkflowHistoryRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetWorkflowHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlternateWorker">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getAlternateWorker" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetAlternateWorkerRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetAlternateWorkerRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetAlternateWorkerResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createLeaveRequestByNature">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/createLeaveRequestByNature" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesCreateLeaveRequestByNatureRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesCreateLeaveRequestByNatureRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesCreateLeaveRequestByNatureResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyDetails">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getPolicyDetails" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetPolicyDetailsRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetPolicyDetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetPolicyDetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllleaveRequestByNatureList">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getAllleaveRequestByNatureList" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetAllleaveRequestByNatureListRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetAllleaveRequestByNatureListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetAllleaveRequestByNatureListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllleaveRequestList">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getAllleaveRequestList" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetAllleaveRequestListRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetAllleaveRequestListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetAllleaveRequestListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/Delete" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesDeleteRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesDeleteRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesDeleteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/Approve" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesApproveRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesApproveRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesApproveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLeaveBalance">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getLeaveBalance" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetLeaveBalanceRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetLeaveBalanceRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetLeaveBalanceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllleaveReturnRequestList">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getAllleaveReturnRequestList" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetAllleaveReturnRequestListRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetAllleaveReturnRequestListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetAllleaveReturnRequestListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowList">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getPendingWorkflowList" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetPendingWorkflowListRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetPendingWorkflowListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetPendingWorkflowListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnLeaveRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/ReturnLeaveRequest" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesReturnLeaveRequestRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesReturnLeaveRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesReturnLeaveRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editLeaveRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/editLeaveRequest" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesEditLeaveRequestRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesEditLeaveRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesEditLeaveRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes">
+      <soap:operation soapAction="http://tempuri.org/SDSLeaveRequestServices/getReasonCodes" style="document" />
+      <wsdl:input name="SDSLeaveRequestServicesGetReasonCodesRequest">
+        <soap:header message="i1:SDSLeaveRequestServicesGetReasonCodesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLeaveRequestServicesGetReasonCodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSLoanRequestServices" type="i1:SDSLoanRequestServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSLoanRequestServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/Delete" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesDeleteRequest">
+        <soap:header message="i1:SDSLoanRequestServicesDeleteRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesDeleteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EditLoanRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/EditLoanRequest" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesEditLoanRequestRequest">
+        <soap:header message="i1:SDSLoanRequestServicesEditLoanRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesEditLoanRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLoanReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getAllLoanReqeust" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetAllLoanReqeustRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetAllLoanReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetAllLoanReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/Approve" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesApproveRequest">
+        <soap:header message="i1:SDSLoanRequestServicesApproveRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesApproveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/Cancel" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesCancelRequest">
+        <soap:header message="i1:SDSLoanRequestServicesCancelRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesCancelResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLoanReqeust">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getLoanReqeust" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetLoanReqeustRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetLoanReqeustRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetLoanReqeustResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowHistory">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getWorkflowHistory" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetWorkflowHistoryRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetWorkflowHistoryRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetWorkflowHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLoanTypes">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getLoanTypes" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetLoanTypesRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetLoanTypesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetLoanTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/Reject" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesRejectRequest">
+        <soap:header message="i1:SDSLoanRequestServicesRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createLoanRequest">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/createLoanRequest" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesCreateLoanRequestRequest">
+        <soap:header message="i1:SDSLoanRequestServicesCreateLoanRequestRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesCreateLoanRequestResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReasonCodes">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getReasonCodes" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetReasonCodesRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetReasonCodesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetReasonCodesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPolicyDetails">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getPolicyDetails" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetPolicyDetailsRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetPolicyDetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetPolicyDetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingWorkflowList">
+      <soap:operation soapAction="http://tempuri.org/SDSLoanRequestServices/getPendingWorkflowList" style="document" />
+      <wsdl:input name="SDSLoanRequestServicesGetPendingWorkflowListRequest">
+        <soap:header message="i1:SDSLoanRequestServicesGetPendingWorkflowListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoanRequestServicesGetPendingWorkflowListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSLoginServices" type="i1:SDSLoginServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSLoginServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ForgetPassword">
+      <soap:operation soapAction="http://tempuri.org/SDSLoginServices/ForgetPassword" style="document" />
+      <wsdl:input name="SDSLoginServicesForgetPasswordRequest">
+        <soap:header message="i1:SDSLoginServicesForgetPasswordRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoginServicesForgetPasswordResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPermission">
+      <soap:operation soapAction="http://tempuri.org/SDSLoginServices/getPermission" style="document" />
+      <wsdl:input name="SDSLoginServicesGetPermissionRequest">
+        <soap:header message="i1:SDSLoginServicesGetPermissionRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoginServicesGetPermissionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ascp">
+      <soap:operation soapAction="http://tempuri.org/SDSLoginServices/ascp" style="document" />
+      <wsdl:input name="SDSLoginServicesAscpRequest">
+        <soap:header message="i1:SDSLoginServicesAscpRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoginServicesAscpResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changePassword">
+      <soap:operation soapAction="http://tempuri.org/SDSLoginServices/changePassword" style="document" />
+      <wsdl:input name="SDSLoginServicesChangePasswordRequest">
+        <soap:header message="i1:SDSLoginServicesChangePasswordRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoginServicesChangePasswordResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserToken">
+      <soap:operation soapAction="http://tempuri.org/SDSLoginServices/UpdateUserToken" style="document" />
+      <wsdl:input name="SDSLoginServicesUpdateUserTokenRequest">
+        <soap:header message="i1:SDSLoginServicesUpdateUserTokenRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoginServicesUpdateUserTokenResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserEncrypted">
+      <soap:operation soapAction="http://tempuri.org/SDSLoginServices/ValidateUserEncrypted" style="document" />
+      <wsdl:input name="SDSLoginServicesValidateUserEncryptedRequest">
+        <soap:header message="i1:SDSLoginServicesValidateUserEncryptedRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSLoginServicesValidateUserEncryptedResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSPaySlipInfoService" type="i1:SDSPaySlipInfoService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSPaySlipInfoService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPaySlipLineInfoList">
+      <soap:operation soapAction="http://tempuri.org/SDSPaySlipInfoService/getPaySlipLineInfoList" style="document" />
+      <wsdl:input name="SDSPaySlipInfoServiceGetPaySlipLineInfoListRequest">
+        <soap:header message="i1:SDSPaySlipInfoServiceGetPaySlipLineInfoListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPaySlipInfoServiceGetPaySlipLineInfoListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPaySlipInfo">
+      <soap:operation soapAction="http://tempuri.org/SDSPaySlipInfoService/getPaySlipInfo" style="document" />
+      <wsdl:input name="SDSPaySlipInfoServiceGetPaySlipInfoRequest">
+        <soap:header message="i1:SDSPaySlipInfoServiceGetPaySlipInfoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPaySlipInfoServiceGetPaySlipInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSPersonalInfoServices" type="i1:SDSPersonalInfoServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSPersonalInfoServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllAddressList">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getAllAddressList" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetAllAddressListRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetAllAddressListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetAllAddressListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getJobdetails">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getJobdetails" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetJobdetailsRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetJobdetailsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetJobdetailsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOnePersonalInfo">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getOnePersonalInfo" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetOnePersonalInfoRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetOnePersonalInfoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetOnePersonalInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMedicalInsuranceList">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getMedicalInsuranceList" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetMedicalInsuranceListRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetMedicalInsuranceListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetMedicalInsuranceListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNotification">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/deleteNotification" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesDeleteNotificationRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesDeleteNotificationRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesDeleteNotificationResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLoanedEquipList">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getAllLoanedEquipList" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetAllLoanedEquipListRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetAllLoanedEquipListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetAllLoanedEquipListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCompetencies">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getCompetencies" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetCompetenciesRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetCompetenciesRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetCompetenciesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonPhoto">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getPersonPhoto" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetPersonPhotoRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetPersonPhotoRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetPersonPhotoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getContact">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getContact" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetContactRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetContactRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetContactResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNotificationList">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getNotificationList" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetNotificationListRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetNotificationListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetNotificationListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAddress">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getAddress" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetAddressRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetAddressRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetAddressResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getManagersTeamList">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getManagersTeamList" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetManagersTeamListRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetManagersTeamListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetManagersTeamListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getContactList">
+      <soap:operation soapAction="http://tempuri.org/SDSPersonalInfoServices/getContactList" style="document" />
+      <wsdl:input name="SDSPersonalInfoServicesGetContactListRequest">
+        <soap:header message="i1:SDSPersonalInfoServicesGetContactListRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSPersonalInfoServicesGetContactListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_SDSWorkflowService" type="i1:SDSWorkflowService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_SDSWorkflowService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApproveReject">
+      <soap:operation soapAction="http://tempuri.org/SDSWorkflowService/ApproveReject" style="document" />
+      <wsdl:input name="SDSWorkflowServiceApproveRejectRequest">
+        <soap:header message="i1:SDSWorkflowServiceApproveRejectRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSWorkflowServiceApproveRejectResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkItems">
+      <soap:operation soapAction="http://tempuri.org/SDSWorkflowService/getWorkItems" style="document" />
+      <wsdl:input name="SDSWorkflowServiceGetWorkItemsRequest">
+        <soap:header message="i1:SDSWorkflowServiceGetWorkItemsRequest_Headers" part="context" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SDSWorkflowServiceGetWorkItemsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AifFaultFault">
+        <soap:fault use="literal" name="AifFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RoutingService">
+    <wsdl:port name="serviceEndpoint" binding="tns:serviceEndpoint">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSAttendanceInfoServices" binding="tns:BasicHttpBinding_SDSAttendanceInfoServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSBankInfoServices" binding="tns:BasicHttpBinding_SDSBankInfoServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSBenefitsInfoService" binding="tns:BasicHttpBinding_SDSBenefitsInfoService">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSBusinessTripRequestServices" binding="tns:BasicHttpBinding_SDSBusinessTripRequestServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSDashboardServices" binding="tns:BasicHttpBinding_SDSDashboardServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSDependentInfoServices" binding="tns:BasicHttpBinding_SDSDependentInfoServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSEosRequestServices" binding="tns:BasicHttpBinding_SDSEosRequestServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSExcuseRequestServices" binding="tns:BasicHttpBinding_SDSExcuseRequestServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSGeneralRequestService" binding="tns:BasicHttpBinding_SDSGeneralRequestService">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSIdentificationInfoServices" binding="tns:BasicHttpBinding_SDSIdentificationInfoServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSLeaveRequestServices" binding="tns:BasicHttpBinding_SDSLeaveRequestServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSLoanRequestServices" binding="tns:BasicHttpBinding_SDSLoanRequestServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSLoginServices" binding="tns:BasicHttpBinding_SDSLoginServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSPaySlipInfoService" binding="tns:BasicHttpBinding_SDSPaySlipInfoService">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSPersonalInfoServices" binding="tns:BasicHttpBinding_SDSPersonalInfoServices">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_SDSWorkflowService" binding="tns:BasicHttpBinding_SDSWorkflowService">
+      <soap:address location="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

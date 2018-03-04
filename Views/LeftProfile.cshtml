@@ -1,0 +1,306 @@
+﻿@using Helper
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+            <div class="profile_info">
+                <span><h3>@Resources.getDescriptionBykey("Welcome,") @Model.FirstName</h3></span>
+            </div>
+            <div class="profile_pic">
+                <img src="@Model.ImagePath" alt="..." class="img-circle profile_img">
+
+            </div>
+            <div class="clearfix"></div>
+
+
+
+        </div>
+        <!-- /menu profile quick info -->
+
+        <br />
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+
+                @*<h3>Additional Information</h3>*@
+                <ul class="nav side-menu">
+                    <li>
+                        <a href="/Account/Home"><i class="fa fa-home"></i> @Resources.getDescriptionBykey("Home")</a>
+                    </li>
+
+
+
+
+                    <li>
+                        <a><i class="fa fa-user"></i> @Resources.getDescriptionBykey("Profile") <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="/Home/Details?Group=PersonalInfo">@Resources.getDescriptionBykey("Personal Information") </a></li>
+                            <li><a href="/Home/Details?Detail=Address">@Resources.getDescriptionBykey("Address") </a></li>
+                            <li><a href="/Home/Details?Detail=Contacts">@Resources.getDescriptionBykey("Contact information") </a></li>
+                            <li><a href="/Home/Details?Detail=Identifications">@Resources.getDescriptionBykey("Identifications") </a></li>
+                            <li><a href="/Home/Details?Detail=Banks">@Resources.getDescriptionBykey("Bank Accounts") </a></li>
+                            <li><a href="/Home/Details?Detail=Dependencies">@Resources.getDescriptionBykey("Dependents") </a></li>
+                            <li><a href="/Home/Details?Group=Benifits">@Resources.getDescriptionBykey("Benefits") </a></li>
+                            <li><a href="/Home/Details?Group=Skills">@Resources.getDescriptionBykey("Competences") </a></li>
+                            <li><a href="/Home/Details?Group=Jobs">@Resources.getDescriptionBykey("JOB Details") </a></li>
+
+
+                        </ul>
+                    </li>
+
+                    <li>
+                    <li>
+                    <li>
+                        <a><i class="fa fa-info-circle"></i> @Resources.getDescriptionBykey("Inquiries")  <span class="fa fa-chevron-down"></span></a>
+
+
+                        <ul class="nav child_menu">
+                            <li><a href="/MyAttendance/GetAttendancebyDate">@Resources.getDescriptionBykey("Attendance") </a></li>
+                            <li><a href="/Payslip/PayslipbyEmployee">@Resources.getDescriptionBykey("Pay slip") </a></li>
+                            <li><a href="/LoanedItem/GetLoanedItemsbyEmployee">@Resources.getDescriptionBykey("Loaned Item") </a></li>
+                            <li><a href="/Home/Details?Group=MedicalInsurance">@Resources.getDescriptionBykey("Medical Insurance") </a></li>
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a><i class="material-icons" style="font-size:20px">&#xe912;</i> @Resources.getDescriptionBykey("Self-services") <span class="fa fa-chevron-down"></span></a>
+
+                        <ul class="nav child_menu">
+                            <li><a href="/LeaveRequest/LeaveRequest?reqnature=0">@Resources.getDescriptionBykey("Leave request") </a></li>
+                            <li><a href="/LeaveRequest/LeaveEnchasment">@Resources.getDescriptionBykey("Leave Encashment") </a></li>
+                            <li><a href="/LeaveRequest/LeavePlanning">@Resources.getDescriptionBykey("Leave Planning") </a></li>
+
+                            <li><a href="/LeaveRequest/TicketRequest">@Resources.getDescriptionBykey("Ticket Request")  </a></li>
+                            <li><a href="/LeaveRequest/TicketEnchasment">@Resources.getDescriptionBykey("Ticket Encashment")  </a></li>
+                            <li><a href="/Loan/LoanRequests">@Resources.getDescriptionBykey("Loan request") </a></li>
+                            <li><a href="/GeneralRequest/GeneralRequests">@Resources.getDescriptionBykey("General request") </a></li>
+                            <li><a href="/GeneralRequest/LetterRequests">@Resources.getDescriptionBykey("Letter request") </a></li>
+                            <li><a href="/BusinessTrip/BusinessTripRequests">@Resources.getDescriptionBykey("Business trip request") </a></li>
+                            <li><a href="/EOS/EOSRequests">@Resources.getDescriptionBykey("EOS request") </a></li>
+                            <li><a href="/ExcuseRequest/ExcuseRequests">@Resources.getDescriptionBykey("Excuses request") </a></li>
+                            <li><a href="/ExcuseRequest/AbsenceRequests">@Resources.getDescriptionBykey("Absence Requests")  </a></li>
+                            <li><a href="/ExcuseRequest/OverTimeRequests"> @Resources.getDescriptionBykey("OverTime Requests") </a></li>
+                            <li><a href="/ExcuseRequest/TrainingRequests"> @Resources.getDescriptionBykey("Training Requests") </a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                    <li>
+                        <a><i class="glyphicon glyphicon-check" style="font-size:20px"></i> @Resources.getDescriptionBykey("Approval") <span class="fa fa-chevron-down"></span></a>
+
+                        <ul class="nav child_menu">
+                            <li><a href="/LeaveRequest/SubmittedRequestsbyType">@Resources.getDescriptionBykey("Leave request") </a></li>
+                            <li><a href="/Loan/SubmittedLoanRequest">@Resources.getDescriptionBykey("Loan request") </a></li>
+                            <li><a href="/GeneralRequest/SubmittedGeneralRequest">@Resources.getDescriptionBykey("General request") </a></li>
+                            <li><a href="/BusinessTrip/SubmittedBusinessTripRequest">@Resources.getDescriptionBykey("Business trip request") </a></li>
+                            <li><a href="/EOS/SubmittedEOSRequest">@Resources.getDescriptionBykey("EOS request") </a></li>
+                            <li><a href="/ExcuseRequest/SubmittedExcuseRequest">@Resources.getDescriptionBykey("Excuses request")</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+        <!-- /sidebar menu -->
+
+
+
+    </div>
+</div>
+
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <nav>
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+            @*<div class="logo" style="float:left;width:60px;">
+               <img src="~/images/smallLogo.png" style="height: 70px;width: 110px;margin-top: -8px;">
+            </div>*@
+            <div class="company_name_header" >
+                <h3>@Model.Companyname</h3>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="" id="colour-variations">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <img src="@Model.ImagePath" alt="">@Model.FirstName
+                        <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right" id="theme-styles">
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style")'>
+                                <span style="background: #0078d7;"></span>
+                                <span style="background: #0e62aa;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style2")'>
+                                <span style="background: #3f4f26;"></span>
+                                <span style="background: #2ecc71;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style3")'>
+                                <span style="background: #16a085;"></span>
+                                <span style="background: #1abc9c;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style4")'>
+                                <span style="background: #9b59b6;"></span>
+                                <span style="background: #8e44ad;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style5")'>
+                                <span style="background: #34495e;"></span>
+                                <span style="background: #2c3e50;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style6")'>
+                                <span style="background: #004451;"></span>
+                                <span style="background: #008299;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style7")'>
+                                <span style="background: #2b1539;"></span>
+                                <span style="background: #432158;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" name="style-anchor" data-theme='@("css/"+Resources.getDirectionByLanguageId()+"/style8")'>
+                                <span style="background: #742a5b;"></span>
+                                <span style="background: #b5418e;"></span>
+                                <span style="background: #f2f2f2;"></span>
+                            </a>
+                        </li>
+                   
+                        <li><a href="/Home/ChangePassword" onclick="return true;" target="_blank"><i class="fa fa-key pull-right"></i>@Resources.getDescriptionBykey("Change Password") </a></li>
+
+                        <li><a id="btnlogouthmpg"><i class="fa fa-sign-out pull-right"></i>@Resources.getDescriptionBykey("Log Out") </a></li>
+                                          </ul>
+                </li>
+
+                
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-globe"></i>
+
+                    </a>
+                    <ul id="ddlLanguges" class="dropdown-menu" role="menu">
+                        
+
+                    </ul>
+
+                  
+</li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- /top navigation -->
+<script type="text/javascript">
+
+   
+
+
+    $(document).ready(function () {
+
+       
+        $.ajax(
+                 {
+                     type: "Get",
+                     url: "/Home/GetAllLanguage",
+
+                     traditional: true,
+                     contentType: "application/json; charset=utf-8",
+                     datatype: JSON,
+
+                     success: function (result) {
+                         $(result).each(function () {
+                             // console.log($("#menu1"));
+                             //console.log(this.Description);
+                             var Languagemthod = "changeLanguage('" + this.LanguageID + "')";
+                             var langugaeItem = $("#ddlLanguges").append($("<li></li>").append($("<a></a>").attr("data", this.LanguageID).attr("onclick", Languagemthod).html(this.Description)));
+
+                         });
+                     },
+                     //  error: errorFuncIns
+
+                 });
+
+
+        //$("#ddlLanguges>li>a").click(function () {
+            
+        //    alert($(this).attr('data'));
+        //});
+
+        $("#btnlogouthmpg").click(function () {
+            debugger;
+            var urls = "/Account/Logout" ;
+            $.ajax(
+                {
+                    type: "POST",
+                    url: urls,
+
+                    traditional: true,
+                    // data: data,
+                     success: function () {
+                         debugger;
+                        var url = "/Account/Login";
+                        window.location.href = url;
+                    },
+                    //  error: errorFuncIns
+
+                });
+        });
+    });
+    
+   
+
+    function changeLanguage(langId) {
+
+        document.cookie = "Language=" + langId + ";Path=/";
+       // await sleep(2000);
+        location.reload();
+       /* $.ajax(
+                 {
+                     type: "Get",
+                     url: "/Home/ChangeLanguage",
+
+                     traditional: true,
+                     contentType: "application/json; charset=utf-8",
+                     datatype: JSON,
+                     data: { languageID: langId },
+                     success: function () {
+                         location.reload();
+                     },
+                     //  error: errorFuncIns
+
+                 });*/
+
+    }
+
+ 
+ 
+</script>

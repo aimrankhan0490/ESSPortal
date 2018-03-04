@@ -1,0 +1,208 @@
+﻿@using Helper
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>@Resources.getDescriptionBykey("Soletechs Login") </title>
+    <link rel="shortcut icon" href="~/images/icon.png">
+
+    <!-- Bootstrap -->
+    <link href="~/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href='@("/css/"+Resources.getDirectionByLanguageId()+"/icomoon.css")' rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href='@("/css/"+Resources.getDirectionByLanguageId()+"/style.css")' rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow-y: hidden;
+        }
+
+        .login {
+            background-image: url('../../images/background.jpg');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+</head>
+
+
+
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <div>
+                        <img src="~/images/SmallLogo.png" style="height: 106px;">
+
+                    </div>
+                    <form>
+
+                        <h1 >@Resources.getDescriptionBykey("Sign in")</h1>
+                        <div>
+
+                            <input type="text" id="txtUserName" class="form-control" placeholder="User name" />
+                        </div>
+                        <div>
+
+                            <input type="password" id="txtpassword" class="form-control" placeholder="Password" />
+                        </div>
+                        <div>
+                            <input type="checkbox"> <span>@Resources.getDescriptionBykey("Remember password")</span>
+                        </div>
+                        <div>
+
+                            <a id="btnlogin" class="btn btn-info btn-lg submit">@Resources.getDescriptionBykey("Sign in")</a>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div>
+                            <a class=" btn btn-primary btn-lg" href="#">@Resources.getDescriptionBykey("Forget my password")</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link ">
+                                @Resources.getDescriptionBykey("New to site")
+                                <a href="#signup" class="to_register"> @Resources.getDescriptionBykey("Services configuration") </a>
+                            </p>
+                            <div class="clearfix"></div>
+                            <br>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <div>
+                        <img src="~/images/SmallLogo.png" style="height: 106px;">
+
+                    </div>
+                    <form>
+                        <h1>@Resources.getDescriptionBykey("Services configuration")</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Company ID" required="" />
+                        </div>
+
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-primary submit" href="index.html">@Resources.getDescriptionBykey("Test services")</a>
+                        </div>
+                        <div>
+                            <a class="btn btn-info submit" href="index.html">@Resources.getDescriptionBykey("save")</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                @Resources.getDescriptionBykey("Already a member")
+                                <a href="#signin" class="to_register"> @Resources.getDescriptionBykey("Log in") </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+
+                            <br>
+
+
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/vendors/nprogress/nprogress.js"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="~/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="~/vendors/moment/min/moment.min.js"></script>
+    <script src="~/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="~/js/main.js"></script>
+    <!-- Select2 -->
+    <script src="~/vendors/select2/dist/js/select2.full.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {      
+ 
+            $("#btnlogin").click(function() {      
+                //Do stuff when clicked
+                debugger;
+                var data = new FormData();
+                var usrname = $("#txtUserName").val().trim();
+                // $("#txtEmail").val()
+                var pswrd = $("#txtpassword").val().trim();
+                if (usrname != "" && pswrd != "") {
+                    var urls = "/Account/ValidateLogin?username=" + usrname + "&password=" + pswrd;
+                    $.ajax(
+                        {
+                            type: "POST",
+                            url: urls,
+
+                            traditional: true,
+                            // data: data,
+                            success: function (data) {
+                                if (data == "") {
+                                    var url = "/Account/Home";
+                                    window.location.href = url;
+                                }
+                                else
+                                    alert(data);
+                            },
+                            error: errorFuncIns
+
+                        });
+
+
+                    function errorFuncIns(data ) {
+                        alert(data)
+
+                    }
+                }
+                else
+                    alert("Enter Username and Password")
+            });
+        });
+    </script>
+</body>
+
+
+</html>

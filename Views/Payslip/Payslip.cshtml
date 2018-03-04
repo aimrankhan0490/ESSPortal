@@ -1,0 +1,202 @@
+﻿@using Helper
+@model ESSPortal.DTOModels.DTOPayslip
+
+@{
+    ViewBag.Title = "Payslip";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Resources.getDescriptionBykey("Pay slip")</h2>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2><i class="fa fa-align-left"></i> @Resources.getDescriptionBykey("Pay slip") </h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content" style="display: block;">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="control-label col-md-3 col-sm-3">@Resources.getDescriptionBykey("Year")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select class="select2_single form-control" id="ddlyear" tabindex="@Model.Year" name="Year">
+
+                            <option value="2018">2018 </option>
+                            <option value="2017">2017 </option>
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="control-label col-md-3 col-sm-3">@Resources.getDescriptionBykey("Month")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select class="select2_single form-control" tabindex="@Model.Month" id="ddlMonth" name="month">
+                            <option value="00">@Resources.getDescriptionBykey("Current Month")</option>
+                            <option value="01">@Resources.getDescriptionBykey("January")</option>
+                            <option value="02">@Resources.getDescriptionBykey("February")</option>
+                            <option value="03">@Resources.getDescriptionBykey("March")</option>
+                            <option value="04">@Resources.getDescriptionBykey("April")</option>
+                            <option value="05">@Resources.getDescriptionBykey("May")</option>
+                            <option value="06">@Resources.getDescriptionBykey("June")</option>
+                            <option value="07">@Resources.getDescriptionBykey("July")</option>
+                            <option value="08">@Resources.getDescriptionBykey("August")</option>
+                            <option value="09">@Resources.getDescriptionBykey("September")</option>
+                            <option value="10">@Resources.getDescriptionBykey("October")</option>
+                            <option value="11">@Resources.getDescriptionBykey("Novermber")</option>
+                            <option value="12">@Resources.getDescriptionBykey("December")</option>
+                        </select>
+                    </div><button id="btnpayslip" value="Go">@Resources.getDescriptionBykey("View")</button>
+                </div>
+                        <span> @Resources.getDescriptionBykey("pay group") </span><span>@Model.Paygroup </span> </ div >
+                        <div class="col-md-6">
+                            <span> @Resources.getDescriptionBykey("Pay cycle")</span> <span>@Model.Paycycle </span> </ div >
+                        </div>
+                        <div class="col-md-6">
+                            <span> @Resources.getDescriptionBykey("From Date")</span> <span>@Model.FromDate </span> </ div >
+                        </div>
+                        <div class="col-md-6">
+                            <span> @Resources.getDescriptionBykey("To Date")</span> <span>@Model.ToDate </span> </ div >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default col-md-6 no-padding">
+            <div class="panel-heading">@Resources.getDescriptionBykey("Earning")</div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            @*<th>Allowance Type ID</th>*@
+                            <th>@Resources.getDescriptionBykey("Allowance Type")</th>
+                            <th width="30%">@Resources.getDescriptionBykey("Amount")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Earnings)
+                        {
+                            <tr>
+                                @* <td>@item.EarningsTypeID</td>*@
+                                <td>@item.EarningsTypeID</td>
+                                <td>@item.Amount</td>
+                            </tr>
+                        }
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <table width="100%">
+                    <tr>
+                        <th width="70%">@Resources.getDescriptionBykey("Total Earning")</th>
+                        <th>@Model.TotalEarnings</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--- ----------------------------------------------------------- -->
+        <div class="panel panel-default col-md-5 no-padding" style="margin-left:20px;">
+            <div class="panel-heading">@Resources.getDescriptionBykey("Deduction")</div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            @* <th width="70%">Dedcution Tyepe Id</th>*@
+                            <th width="70%">Dedcution Type</th>
+                            <th>@Resources.getDescriptionBykey("Amount")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var itemd in Model.Deductions)
+                        {
+                            <tr>
+                                @*<td>@itemd.DeductionTypeID</td>*@
+                                <td>@itemd.DeductionTypeID</td>
+                                <td>@itemd.Amount </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <table width="100%">
+                    <tr>
+                        <th width="70%">@Resources.getDescriptionBykey("Total Deduction")</th>
+                        <th>@Model.TotalDeductions</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------------------------------------- -->
+    <div class="panel panel-default ">
+        <div class="panel-body net_amount">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th width="70%">@Resources.getDescriptionBykey("Net Amount")</th>
+                        <th>@Model.NetAmount</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#btnpayslip").click(function () {
+            //Do stuff when clicked
+            debugger;
+            var data = new FormData();
+            var year = $('#ddlyear').find(":selected").val();
+            var month = $('#ddlMonth').find(":selected").val();
+            // $("#txtEmail").val()
+            //var pswrd = $("#txtpassword").val().trim();
+            if (year != "" && month != "") {
+                var urls = "/Payslip/PayslipbyEmployee?month=" + month + "&year=" + year;
+                window.location.href = urls;
+
+            //    $.ajax(
+            //        {
+            //            type: "POST",
+            //            url: urls,
+
+            //            traditional: true,
+            //            // data: data,
+            //            success: function () {
+            //                //var url = "/Account/DashBoard";
+            //                //window.location.href = url;
+            //            },
+            //            error: errorFuncIns
+
+            //        });
+
+
+            //    function errorFuncIns(data, Status) {
+            //        alert("Data Invalid")
+
+            //    }
+            }
+            else
+                alert("Enter Username and Password")
+        });
+    });
+</script>

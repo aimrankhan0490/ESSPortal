@@ -1,0 +1,286 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "CreateNewLoanRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/jquery.datepick-ar.js"></script>
+<script src="~/js/jquery.plugin.js"></script>
+<link href="~/css/smoothness.datepick.css" rel="stylesheet" />
+<script src="~/js/jquery.datepick.js"></script>
+<script>
+    $(function () {
+        $('#deducstarttdate').datepick();
+
+
+    });
+
+
+</script>
+<ul class="nav navbar-right panel_toolbox">
+    <li>
+        <div class="btn-group" style="width:100%">
+            <button type="button" class="btn btn-default col-md-8">@Resources.getDescriptionBykey("Action") </button>
+            <button type="button" class="btn btn-default dropdown-toggle col-md-4" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu" style="background: #FFFFFF">
+                <li>
+                    <a id="btnsubmit" class="accept_leave" style="">@Resources.getDescriptionBykey("Submit")</a>
+                </li>
+
+                @*<li>
+                        <a href="#" class="reject_leave">Reject</a>
+                    </li>
+
+                    <li>
+                        <a href="history.html" class="history_leave">View History</a>
+                    </li>*@
+
+            </ul>
+        </div>  <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+    </li>
+</ul>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Loan Request")</h2>
+
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4" for="start_date">
+                        @Resources.getDescriptionBykey("Loan Request ID") <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="fullname" class="form-control" readonly>
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">
+                        @Resources.getDescriptionBykey("Request Date")  <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" readonly id="requestdate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Loan Type")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="loantype"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group  col-md-4">
+                    <label class="control-label col-md-4 col-sm-4" for="end_date">
+                        @Resources.getDescriptionBykey("Reason Code")  <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="ddlreason" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">
+                        @Resources.getDescriptionBykey("Deduction Start Date") <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="deducstarttdate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Loan Amount")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="number" min="1" id="loanamount" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">
+                    @Resources.getDescriptionBykey("No of Installment") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" max="24" min="1" id="noofinstallment" class="form-control">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">
+                    @Resources.getDescriptionBykey("Monthly Installment") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" readonly id="monthlyinstallment" class="form-control">
+                </div>
+            </div>
+
+        </div>
+        
+        
+        </form>
+    </div>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Comments")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+            <div class="row">
+                
+               
+               
+            </div>
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Comment") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea id="comment" required="required" name="comment" class="form-control col-md-7 col-xs-12"></textarea>
+                </div>
+            </div>
+
+            <div class="item form-group">
+                @*<label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Attachment") <span class="required">*</span>
+                </label>*@
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="file" style="display:none;" id="fileupload" accept="image/*" name="file" />
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "@Url.Action("getrequestreasons", "Loan")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Reason--" + ' </option>';
+                $("#ddlreason").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlreason").append($('<option>').text(data[i]).attr('value', data[i]));
+
+                });
+            }
+        });
+        $.ajax({
+            url: "@Url.Action("getloantypes", "Loan")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Reason--" + ' </option>';
+                $("#loantype").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#loantype").append($('<option>').text(data[i]).attr('value', data[i]));
+
+                });
+            }
+        });
+        $('#noofinstallment').on('input', function (e) {
+            debugger;
+            var noofmon = $(this).val().replace(/\s/g, '');
+            var lnamnt = $("#loanamount").val().replace(/\s/g, '');
+            if (noofmon.length > 0 ) {
+
+                $('#monthlyinstallment').val(Math.round((lnamnt / noofmon)*100) / 100);
+            }
+        });
+        $('#loanamount').on('input', function (e) {
+            debugger;
+            var lnamnt= $(this).val().replace(/\s/g, '');
+            var noofmon = $("#noofinstallment").val().replace(/\s/g, '');
+            if (lnamnt.length > 0) {
+          
+                $('#monthlyinstallment').val(Math.round((lnamnt / noofmon)*100) / 100);
+            }
+        });
+        var d = new Date();
+        $('#fileupload').bind('change', function () {
+            debugger;
+            // var ext = fileName.split('.').pop();
+            // alert(ext);
+            var files = $("#fileupload")[0].files[0];
+            var temp = "";
+            temp += "<br>Filename: " + files.name;
+            var ext = temp.split(".").pop();
+            if (ext == "JPEG" || ext == "PNG" || ext == "Jpeg" || ext == "Png" || ext == "jpeg" || ext == "png") { }
+            else
+                alert("Only Jpeg and Png formats");
+
+            //  alert('This file size is: ' + this.files[0].size / 1024 / 1024 + "MB");
+        });
+        $("#requestdate").val(d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear());
+        $('#btnsubmit').click(function () {
+            debugger;
+            if ($('#ddlreason').val() != "-1" && $('#loantype').val() != ""
+                && $('#deducstarttdate').val() != "" && $('#noofinstallment').val() != ""
+                && $('#loanamount').val() != "") {
+
+                $.ajax({
+                    url: "@Url.Action("CreateLoanRequest", "Loan")",
+                    type: 'GET',
+                    data: { reason: $('#ddlreason').val(),
+                        comment: $('#comment').val(),
+                        loantype: $('#loantype').val(),
+                        loanamount: $('#loanamount').val(),
+                        noofinstallment: $('#noofinstallment').val(),
+                        deductionistartdate: $('#deducstarttdate').val(),
+
+                    },
+                    contentType: "application/json; charset=utf-8",
+
+
+                    error: function () {
+                        alert(" An error occurred.");
+                    },
+                    success: function (data1) {
+                        alert(data1);
+                       // alert(data1.split(' ')[1]);
+                        var url = "/Loan/LoanRequests";
+                        window.location.href = url;
+                    }
+
+                });
+            }
+            else {
+                alert("Fill all details");
+            }
+
+        });
+    });
+</script>
+

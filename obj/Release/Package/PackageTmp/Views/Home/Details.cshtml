@@ -1,0 +1,369 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+    <div class="x_panel">
+        <div class="x_title">
+            <h2><i class="fa fa-align-left"></i> @item.DisplayName </h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content" style="display: block;">
+            <div class="x_content" style="@(item.Key=="PersonalInfo" ? "display:block" : "display:none")">
+
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <label>   @Resources.getDescriptionBykey("Personal Number")  </label>
+
+                        <input type="text" id="start_date" value="@item.PersonalNumber" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label>
+                            @Resources.getDescriptionBykey("English Name")
+                        </label>
+                        <input type="text" id="end_date" value="@item.EnglishName" name="end_date" required="required" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label>
+                            @Resources.getDescriptionBykey("Gender")
+                        </label>
+
+                        <input id="position" value="@item.Gender" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Old ID")
+                        </label>
+                        <input id="OldID" value="@item.OldID" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Arabic Name")
+                        </label>
+                        <input id="ArabicName" value="@item.ArabicName" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Marital Status")
+                        </label>
+                        <input id="MaritalStatus" value="@item.MaritalStatus" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Joining Date")
+                        </label>
+
+                        <input id="JoiningDate" value="@item.JoiningDate" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Probation End Date")
+                        </label>
+
+                        <input id="ProbhotionEndDate" value="@item.ProbhotionEndDate" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="x_content" style="@(item.Key=="ContractInfo" ? "display:block" : "display:none")">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <label>     @Resources.getDescriptionBykey("Contract Start Date")    </label>
+
+                        <input type="text" id="ContractStartDate" value="@item.ContractStartDate" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label>  @Resources.getDescriptionBykey("Contract End Date")   </label>
+
+
+                        <input type="text" id="ContractEndDate" value="@item.ContractEndDate" name="end_date" required="required" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label>    @Resources.getDescriptionBykey("Grade")  </label>
+
+                        <input id="position" value="@item.Garde" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label> @Resources.getDescriptionBykey("Salary Scale")  </label>
+
+                        <input id="SalaryScale" value="@item.SalaryScale" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>@Resources.getDescriptionBykey("Pay group")</label>
+
+                        <input id="Paygroup" value="@item.Paygroup" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label> @Resources.getDescriptionBykey("Basic salary") </label>
+
+                        <input id="BasicSalary" value="@item.BasicSalary" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label> @Resources.getDescriptionBykey("Anual Leave") </label>
+
+                        <input id="AnualLeave" value="@item.AnualLeave" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>@Resources.getDescriptionBykey("No of Tickets") </label>
+
+                        <input id="NoofTickets" value="@item.NoofTickets" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Ticket Rate")
+                        </label>
+
+                        <input id="TicketRate" value="@item.TicketRate" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Airport From")
+                        </label>
+
+                        <input id="AirportFrom" value="@item.AirportFrom" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Airport To")
+                        </label>
+
+                        <input id="AirportTo" value="@item.AirportTo" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Resources.getDescriptionBykey("Ticket Class")
+                        </label>
+
+                        <input id="TicketClass" value="@item.TicketClass" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+            </div>
+            <div class="x_content" style="@(item.Key=="Jobs" ? "display:block" : "display:none")">
+                <div class="row">
+
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Position Id")  </label>
+
+
+                        <input type="text" id="PositionId" value="@item.PositionId" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Position Description")   </label>
+
+                        <input type="text" id="PositionDescription" value="@item.PositionDescription" name="end_date" required="required" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Department")  </label>
+
+
+                        <input id="Department" value="@item.Department" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>@Resources.getDescriptionBykey("Report to Position ID")  </label>
+
+                        <input id="ReportToLineManagerName" value="@item.ReporttoPositionManagerId" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label> @Resources.getDescriptionBykey("Report To Line Manager Name")   </label>
+
+                        <input id="ReportToLineManagerName" value="@item.ReportToLineManagerName" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("Position Type")  </label>
+
+                        <input id="PositionType" value="@item.PositionType" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("Position Compensation")   </label>
+
+                        <input id="JobId" value="@item.PositioinCompensationName" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+                    </div>
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("Job Id")  </label>
+
+                        <input id="JobId" value="@item.JobId" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+                    </div>
+
+
+
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("Job Type") </label>
+
+                        <input id="JobType" value="@item.JobType" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("Job Function")  </label>
+
+                        <input id="JobFunction" value="@item.JobFunction" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+            </div>
+            <div class="x_content" style="@(item.Key=="itemmedicalinshdr" ? "display:block" : "display:none")">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Worker Name") </label>
+
+
+                        <input type="text" id="PositionId" value="@item.WorkerName" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Endurance")  </label>
+
+                        <input type="text" id="PositionDescription" value="@item.Endurance" name="end_date" required="required" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Occural")  </label>
+
+
+                        <input id="Department" value="@item.OccuralLimit" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label> @Resources.getDescriptionBykey("Policy Level")  </label>
+
+                        <input id="ReportToLineManagerName" value="@item.PolicyLevel" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label> @Resources.getDescriptionBykey("From Date")   </label>
+
+                        <input id="PositionType" value="@item.FromDate" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("To Date") </label>
+
+                        <input id="JobId" value="@item.ToDate" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+                    </div>
+                    <div class="col-md-3">
+
+                        <label> @Resources.getDescriptionBykey("Dental Limit")</label>
+
+
+                        <input type="text" id="PositionId" value="@item.DentalLimit" readonly class="single_cal4 form-control col-md-7 col-xs-12">
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>  @Resources.getDescriptionBykey("Total Limit") </label>
+
+                        <input id="JobId" value="@item.TotalLimit" class="date-picker form-control col-md-7 col-xs-12" readonly required="required" type="text">
+                    </div>
+
+                </div>
+            </div>
+            @foreach (System.Data.DataTable col in @item.tabledata)
+            {
+
+                <table id="simple-table" class="table table-striped table-bordered bulk_action">
+                    <thead>
+                        <tr>
+
+                            @foreach (System.Data.DataColumn colvals in @col.Columns)
+                            {
+                            <th >
+                                @Resources.getDescriptionBykey(@colvals.Caption)
+                            </th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (System.Data.DataRow corow in @col.Rows)
+                    {
+                        <tr>
+                            @foreach (var cell in corow.ItemArray)
+                                {
+                            <td>@cell.ToString()</td>
+                                }
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+        <!-- -------------row2 --------------------------- -->
+
+
+    </div>
+
+}

@@ -1,0 +1,430 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "CreateExcuseRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/jquery.datepick-ar.js"></script>
+<script src="~/js/jquery.plugin.js"></script>
+<link href="~/css/smoothness.datepick.css" rel="stylesheet" />
+<script src="~/js/jquery.datepick.js"></script>
+<script>
+    $(function () {
+        $('#requestdate').datepick();
+       
+
+    });
+
+
+</script>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Excuse Request")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <div class="btn-group" style="width:100%">
+                    <button type="button" class="btn btn-default col-md-8">@Resources.getDescriptionBykey("Action")</button>
+                    <button type="button" class="btn btn-default dropdown-toggle col-md-4" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" style="background: #FFFFFF">
+                        <li>
+                            <a id="btnsubmit" class="accept_leave" style="">@Resources.getDescriptionBykey("Submit")</a>
+                        </li>
+
+                        @*<li>
+                                <a href="#" class="reject_leave">Reject</a>
+                            </li>
+
+                            <li>
+                                <a href="history.html" class="history_leave">View History</a>
+                            </li>*@
+
+                    </ul>
+                </div>  <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4" for="start_date">
+                        @Resources.getDescriptionBykey("Request ID")  <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="fullname" class="form-control" readonly>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Excuse Nature")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" readonly id="reqwxnature" value="Excuse" class="form-control">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">
+                        @Resources.getDescriptionBykey("Date")   <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="requestdate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Excuse Id")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="ddlexcuseid" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group  col-md-4">
+                    <label class="control-label col-md-4 col-sm-4" for="end_date">
+                        @Resources.getDescriptionBykey("Reason Code")   <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="ddlreason" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("From Time")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="frmhr">
+                            <option value="1">@Resources.getDescriptionBykey("1")</option>
+
+                            <option value="2">@Resources.getDescriptionBykey("2")</option>
+
+                            <option value="3">@Resources.getDescriptionBykey("3")</option>
+
+                            <option value="4">@Resources.getDescriptionBykey("4")</option>
+
+                            <option value="5">@Resources.getDescriptionBykey("5")</option>
+
+                            <option value="6">@Resources.getDescriptionBykey("6")</option>
+
+                            <option value="7">@Resources.getDescriptionBykey("7")</option>
+
+                            <option value="8">@Resources.getDescriptionBykey("8")</option>
+
+                            <option value="9">@Resources.getDescriptionBykey("9")</option>
+
+                            <option value="10">@Resources.getDescriptionBykey("10")</option>
+
+                            <option value="11">@Resources.getDescriptionBykey("11")</option>
+
+                            <option value="12">@Resources.getDescriptionBykey("12")</option>
+                        </select>
+                        <select id="frmmin">
+                            <option value="0">@Resources.getDescriptionBykey("00")</option>
+                            <option value="1">  @Resources.getDescriptionBykey("01")</option>
+                            <option value="2">	@Resources.getDescriptionBykey("02")</option>
+                            <option value="3">	@Resources.getDescriptionBykey("03")</option>
+                            <option value="4">	@Resources.getDescriptionBykey("04")</option>
+                            <option value="5">	@Resources.getDescriptionBykey("05")</option>
+                            <option value="6">	@Resources.getDescriptionBykey("06")</option>
+                            <option value="7">	@Resources.getDescriptionBykey("07")</option>
+                            <option value="8">	@Resources.getDescriptionBykey("08")</option>
+                            <option value="9">	@Resources.getDescriptionBykey("09")</option>
+                            <option value="10">	@Resources.getDescriptionBykey("10")</option>
+                            <option value="11">	@Resources.getDescriptionBykey("11")</option>
+                            <option value="12">	@Resources.getDescriptionBykey("12")</option>
+                            <option value="13">	@Resources.getDescriptionBykey("13")</option>
+                            <option value="14">	@Resources.getDescriptionBykey("14")</option>
+                            <option value="15">	@Resources.getDescriptionBykey("15")</option>
+                            <option value="16">	@Resources.getDescriptionBykey("16")</option>
+                            <option value="17">	@Resources.getDescriptionBykey("17")</option>
+                            <option value="18">	@Resources.getDescriptionBykey("18")</option>
+                            <option value="19">	@Resources.getDescriptionBykey("19")</option>
+                            <option value="20">	@Resources.getDescriptionBykey("20")</option>
+                            <option value="21">	@Resources.getDescriptionBykey("21")</option>
+                            <option value="22">	@Resources.getDescriptionBykey("22")</option>
+                            <option value="23">	@Resources.getDescriptionBykey("23")</option>
+                            <option value="24">	@Resources.getDescriptionBykey("24")</option>
+                            <option value="25">	@Resources.getDescriptionBykey("25")</option>
+                            <option value="26">	@Resources.getDescriptionBykey("26")</option>
+                            <option value="27">	@Resources.getDescriptionBykey("27")</option>
+                            <option value="28">	@Resources.getDescriptionBykey("28")</option>
+                            <option value="29">	@Resources.getDescriptionBykey("29")</option>
+                            <option value="30">	@Resources.getDescriptionBykey("30")</option>
+                            <option value="31">	@Resources.getDescriptionBykey("31")</option>
+                            <option value="32">	@Resources.getDescriptionBykey("32")</option>
+                            <option value="33">	@Resources.getDescriptionBykey("33")</option>
+                            <option value="34"> @Resources.getDescriptionBykey("34")</option>
+                            <option value="35"> @Resources.getDescriptionBykey("35")</option>
+                            <option value="36"> @Resources.getDescriptionBykey("36")</option>
+                            <option value="37"> @Resources.getDescriptionBykey("37")</option>
+                            <option value="38"> @Resources.getDescriptionBykey("38")</option>
+                            <option value="39"> @Resources.getDescriptionBykey("39")</option>
+                            <option value="40"> @Resources.getDescriptionBykey("40")</option>
+                            <option value="41"> @Resources.getDescriptionBykey("41")</option>
+                            <option value="42"> @Resources.getDescriptionBykey("42")</option>
+                            <option value="43"> @Resources.getDescriptionBykey("43")</option>
+                            <option value="44"> @Resources.getDescriptionBykey("44")</option>
+                            <option value="45"> @Resources.getDescriptionBykey("45")</option>
+                            <option value="46"> @Resources.getDescriptionBykey("46")</option>
+                            <option value="47"> @Resources.getDescriptionBykey("47")</option>
+                            <option value="48"> @Resources.getDescriptionBykey("48")</option>
+                            <option value="49"> @Resources.getDescriptionBykey("49")</option>
+                            <option value="50"> @Resources.getDescriptionBykey("50")</option>
+                            <option value="51"> @Resources.getDescriptionBykey("51")</option>
+                            <option value="52"> @Resources.getDescriptionBykey("52")</option>
+                            <option value="53"> @Resources.getDescriptionBykey("53")</option>
+                            <option value="54"> @Resources.getDescriptionBykey("54")</option>
+                            <option value="55"> @Resources.getDescriptionBykey("55")</option>
+                            <option value="56"> @Resources.getDescriptionBykey("56")</option>
+                            <option value="57"> @Resources.getDescriptionBykey("57")</option>
+                            <option value="58"> @Resources.getDescriptionBykey("58")</option>
+                            <option value="59"> @Resources.getDescriptionBykey("59")</option>
+                        </select>
+                        <select id="frmmer">
+                            <option value="am">am</option>
+                            <option value="pm">pm</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("To Time")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="tohr">
+                            <option value="1">@Resources.getDescriptionBykey("1")</option>
+
+                            <option value="2">@Resources.getDescriptionBykey("2")</option>
+
+                            <option value="3">@Resources.getDescriptionBykey("3")</option>
+
+                            <option value="4">@Resources.getDescriptionBykey("4")</option>
+
+                            <option value="5">@Resources.getDescriptionBykey("5")</option>
+
+                            <option value="6">@Resources.getDescriptionBykey("6")</option>
+
+                            <option value="7">@Resources.getDescriptionBykey("7")</option>
+
+                            <option value="8">@Resources.getDescriptionBykey("8")</option>
+
+                            <option value="9">@Resources.getDescriptionBykey("9")</option>
+
+                            <option value="10">@Resources.getDescriptionBykey("10")</option>
+
+                            <option value="11">@Resources.getDescriptionBykey("11")</option>
+
+                            <option value="12">@Resources.getDescriptionBykey("12")</option>
+
+                        </select>
+                        <select id="tomin">
+                            <option value="0">@Resources.getDescriptionBykey("00")</option>
+                            <option value="1">  @Resources.getDescriptionBykey("01")</option>
+                            <option value="2">	@Resources.getDescriptionBykey("02")</option>
+                            <option value="3">	@Resources.getDescriptionBykey("03")</option>
+                            <option value="4">	@Resources.getDescriptionBykey("04")</option>
+                            <option value="5">	@Resources.getDescriptionBykey("05")</option>
+                            <option value="6">	@Resources.getDescriptionBykey("06")</option>
+                            <option value="7">	@Resources.getDescriptionBykey("07")</option>
+                            <option value="8">	@Resources.getDescriptionBykey("08")</option>
+                            <option value="9">	@Resources.getDescriptionBykey("09")</option>
+                            <option value="10">	@Resources.getDescriptionBykey("10")</option>
+                            <option value="11">	@Resources.getDescriptionBykey("11")</option>
+                            <option value="12">	@Resources.getDescriptionBykey("12")</option>
+                            <option value="13">	@Resources.getDescriptionBykey("13")</option>
+                            <option value="14">	@Resources.getDescriptionBykey("14")</option>
+                            <option value="15">	@Resources.getDescriptionBykey("15")</option>
+                            <option value="16">	@Resources.getDescriptionBykey("16")</option>
+                            <option value="17">	@Resources.getDescriptionBykey("17")</option>
+                            <option value="18">	@Resources.getDescriptionBykey("18")</option>
+                            <option value="19">	@Resources.getDescriptionBykey("19")</option>
+                            <option value="20">	@Resources.getDescriptionBykey("20")</option>
+                            <option value="21">	@Resources.getDescriptionBykey("21")</option>
+                            <option value="22">	@Resources.getDescriptionBykey("22")</option>
+                            <option value="23">	@Resources.getDescriptionBykey("23")</option>
+                            <option value="24">	@Resources.getDescriptionBykey("24")</option>
+                            <option value="25">	@Resources.getDescriptionBykey("25")</option>
+                            <option value="26">	@Resources.getDescriptionBykey("26")</option>
+                            <option value="27">	@Resources.getDescriptionBykey("27")</option>
+                            <option value="28">	@Resources.getDescriptionBykey("28")</option>
+                            <option value="29">	@Resources.getDescriptionBykey("29")</option>
+                            <option value="30">	@Resources.getDescriptionBykey("30")</option>
+                            <option value="31">	@Resources.getDescriptionBykey("31")</option>
+                            <option value="32">	@Resources.getDescriptionBykey("32")</option>
+                            <option value="33">	@Resources.getDescriptionBykey("33")</option>
+                            <option value="34"> @Resources.getDescriptionBykey("34")</option>
+                            <option value="35"> @Resources.getDescriptionBykey("35")</option>
+                            <option value="36"> @Resources.getDescriptionBykey("36")</option>
+                            <option value="37"> @Resources.getDescriptionBykey("37")</option>
+                            <option value="38"> @Resources.getDescriptionBykey("38")</option>
+                            <option value="39"> @Resources.getDescriptionBykey("39")</option>
+                            <option value="40"> @Resources.getDescriptionBykey("40")</option>
+                            <option value="41"> @Resources.getDescriptionBykey("41")</option>
+                            <option value="42"> @Resources.getDescriptionBykey("42")</option>
+                            <option value="43"> @Resources.getDescriptionBykey("43")</option>
+                            <option value="44"> @Resources.getDescriptionBykey("44")</option>
+                            <option value="45"> @Resources.getDescriptionBykey("45")</option>
+                            <option value="46"> @Resources.getDescriptionBykey("46")</option>
+                            <option value="47"> @Resources.getDescriptionBykey("47")</option>
+                            <option value="48"> @Resources.getDescriptionBykey("48")</option>
+                            <option value="49"> @Resources.getDescriptionBykey("49")</option>
+                            <option value="50"> @Resources.getDescriptionBykey("50")</option>
+                            <option value="51"> @Resources.getDescriptionBykey("51")</option>
+                            <option value="52"> @Resources.getDescriptionBykey("52")</option>
+                            <option value="53"> @Resources.getDescriptionBykey("53")</option>
+                            <option value="54"> @Resources.getDescriptionBykey("54")</option>
+                            <option value="55"> @Resources.getDescriptionBykey("55")</option>
+                            <option value="56"> @Resources.getDescriptionBykey("56")</option>
+                            <option value="57"> @Resources.getDescriptionBykey("57")</option>
+                            <option value="58"> @Resources.getDescriptionBykey("58")</option>
+                            <option value="59"> @Resources.getDescriptionBykey("59")</option>
+                        </select>
+                        <select id="tomer">
+                            <option value="am">am</option>
+                            <option value="pm">pm</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Comments")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Comment") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea id="comment" required="required" name="comment" class="form-control col-md-7 col-xs-12"></textarea>
+                </div>
+            </div>
+
+            <div class="item form-group">
+                @*<label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Attachment") <span class="required">*</span>
+                </label>*@
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="file" style="display:none" id="fileupload" accept="image/*" name="file" />
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "@Url.Action("getreasoncodes", "ExcuseRequest")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Reason--" + ' </option>';
+                $("#ddlreason").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlreason").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });
+        $.ajax({
+            url: "@Url.Action("getexecustypesforExcuse", "ExcuseRequest")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Request--" + ' </option>';
+                $("#ddlexcuseid").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlexcuseid").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });
+        var d = new Date();
+        $('#fileupload').bind('change', function () {
+            debugger;
+            // var ext = fileName.split('.').pop();
+            // alert(ext);
+            var files = $("#fileupload")[0].files[0];
+            var temp = "";
+            temp += "<br>Filename: " + files.name;
+            var ext = temp.split(".").pop();
+            if (ext == "JPEG" || ext == "PNG" || ext == "Jpeg" || ext == "Png" || ext == "jpeg" || ext == "png") { }
+            else
+                alert("Only Jpeg and Png formats");
+
+            //  alert('This file size is: ' + this.files[0].size / 1024 / 1024 + "MB");
+        });
+        $("#requestdate").val(d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear());
+        $('#btnsubmit').click(function () {
+            debugger;
+            if ($('#ddlreason').val() != "-1" && $('#ddlexcuseid').val() != "-1") {
+                var frmtime = ($('#frmhr').val() + ':' + $('#frmmin').val() + ':' + $('#frmmer').val());
+                var totime = ($('#tohr').val() + ':' + $('#tomin').val() + ':' + $('#tomer').val());
+                $.ajax({
+                    url: "@Url.Action("CreateExcuseRequestbyNature", "ExcuseRequest")",
+                    type: 'GET',
+                    data: {
+                        reason: $('#ddlreason').val(), comment: $('#comment').val(),
+                        execuseid: $('#ddlexcuseid').val(), excusenature: '2',
+                        frmtime: frmtime,
+                        totime: totime,
+                        requestdate: $("#requestdate").val()
+                    },
+                    contentType: "application/json; charset=utf-8",
+
+
+                    error: function () {
+                        alert(" An error occurred.");
+                    },
+                    success: function (data1) {
+                        alert(data1);
+                        if (data1.includes("submitted")) {
+                            var url = "/ExcuseRequest/ExcuseRequests";
+                            window.location.href = url;
+                        }
+                    }
+
+                });
+            }
+            else
+                alert('Fill all details');
+
+        });
+    });
+</script>
+

@@ -1,0 +1,247 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "CreateNewEOSRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/jquery.datepick-ar.js"></script>
+<script src="~/js/jquery.plugin.js"></script>
+<link href="~/css/smoothness.datepick.css" rel="stylesheet" />
+<script src="~/js/jquery.datepick.js"></script>
+<script>
+    $(function () {
+        $('#noticestartdate').datepick();
+        $('#lastworkingdate').datepick();
+
+
+    });
+
+
+</script>
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("EOS Request")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <div class="btn-group" style="width:100%">
+                    <button type="button" class="btn btn-default col-md-8">@Resources.getDescriptionBykey("Action")</button>
+                    <button type="button" class="btn btn-default dropdown-toggle col-md-4" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">@Resources.getDescriptionBykey("Toggle Dropdown")</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" style="background: #FFFFFF">
+                        <li>
+                            <a id="btnsubmit" class="accept_leave" style="">@Resources.getDescriptionBykey("Submit")</a>
+                        </li>
+
+                        @*<li>
+                                <a href="#" class="reject_leave">Reject</a>
+                            </li>
+
+                            <li>
+                                <a href="history.html" class="history_leave">View History</a>
+                            </li>*@
+
+                    </ul>
+                @*</div>*@  @*<a class="collapse-link"><i class="fa fa-chevron-up"></i></a>*@
+                    </div>
+            </li>
+        </ul>
+        @*<div class="clearfix"></div>*@
+   
+    <div class="x_panel">
+        
+        <form class="form-horizontal form-label-left">
+            <div class="row">
+                <div class="item form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4" for="start_date">
+                        @Resources.getDescriptionBykey("Transaction ID") <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="fullname" class="form-control" readonly>
+
+                    </div>
+                </div>
+
+                <div class="item form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">
+                        @Resources.getDescriptionBykey("Transaction Date")<span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" readonly id="requestdate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                    </div>
+                </div>
+
+                <div class="item form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Eos Type")</label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="ddlEosostype" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item form-group  col-md-4">
+                    <label class="control-label col-md-4 col-sm-4" for="end_date">
+                        @Resources.getDescriptionBykey("Reason Code") <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="ddlreason" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="item form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">
+                        @Resources.getDescriptionBykey("Notice Start Date")<span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="noticestartdate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                    </div>
+                   
+                </div>
+                <div class="item form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">
+                        @Resources.getDescriptionBykey("Last Working Date")<span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="lastworkingdate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                    </div>
+                </div>
+            </div>
+         
+            
+        </form>
+        </div>
+</div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Comments")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="item form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Comment") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea id="comment" required="required" name="comment" class="form-control col-md-7 col-xs-12"></textarea>
+                </div>
+            </div>
+
+            <div class="item form-group">
+                @*<label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                    @Resources.getDescriptionBykey("Attachment")  <span class="required">*</span>
+                </label>*@
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="file" style="display:none" id="fileupload" accept="image/*" name="file" />
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "@Url.Action("getrequestreasons", "EOS")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Reason--" + ' </option>';
+                $("#ddlreason").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlreason").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });
+        $.ajax({
+            url: "@Url.Action("geteostypes", "EOS")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Request--" + ' </option>';
+                $("#ddlEosostype").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlEosostype").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });
+        var d = new Date();
+        $('#fileupload').bind('change', function () {
+            debugger;
+            // var ext = fileName.split('.').pop();
+            // alert(ext);
+            var files = $("#fileupload")[0].files[0];
+            var temp = "";
+            temp += "<br>Filename: " + files.name;
+            var ext = temp.split(".").pop();
+            if (ext == "JPEG" || ext == "PNG" || ext == "Jpeg" || ext == "Png" || ext == "jpeg" || ext == "png") { }
+            else
+                alert("Only Jpeg and Png formats");
+
+            //  alert('This file size is: ' + this.files[0].size / 1024 / 1024 + "MB");
+        });
+        $("#requestdate").val(d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear());
+        $('#btnsubmit').click(function () {
+            debugger;
+            if ($('#ddlreason').val() != "-1" && $('#ddlEosostype').val() != "-1"
+                && $('#noticestartdate').val() != "" && $('#lastworkingdate').val() != "") {
+
+                $.ajax({
+                    url: "@Url.Action("CreateEosRequest", "EOS")",
+                    type: 'GET',
+                    data: {
+                        reason: $('#ddlreason').val(), comment: $('#comment').val(),
+                        eostype: $('#ddlEosostype').val(),
+                        lastworkingday: $('#lastworkingdate').val(),
+                        noticestartdate: $('#noticestartdate').val(),
+                    },
+                    contentType: "application/json; charset=utf-8",
+
+
+                    error: function () {
+                        alert(" An error occurred.");
+                    },
+                    success: function (data1) {
+                        alert(data1);
+                        // alert(data1.split(' ')[1]);
+                        var url = "/EOS/EOSRequests";
+                        window.location.href = url;
+                    }
+
+                });
+            }
+            else
+                alert("select EOS type,notice start date ,last working date and reason");
+        });
+    });
+</script>
+
+

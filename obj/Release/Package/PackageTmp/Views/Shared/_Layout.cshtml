@@ -1,0 +1,384 @@
+﻿@using Helper
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Soletechs | Home </title>
+    <!-- jQuery -->
+    <script src="~/vendors/jquery/dist/jquery.min.js"></script>
+    <link rel="shortcut icon" href="images/icon.png">
+
+    <!-- Bootstrap -->
+    <link href="~/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="~/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    @*<script src="~/vendors/select2/dist/js/select2.full.min.js"></script>*@
+    @*<script src="~/vendors/select2/dist/js/select2.full.min.js"></script>*@
+    <!-- bootstrap-progressbar -->
+    <link href="~/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    @* <link href="~/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">*@
+    <script src="~/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    @*<link rel="~/stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
+    @*<link href='@("/css/"+Resources.getDirectionByLanguageId()+"/style.css")' rel="stylesheet">*@
+    <link href='@("/css/"+Resources.getDirectionByLanguageId()+"/icomoon.css")' rel="stylesheet">
+    <!--- --------------------------jsgrid-- -------------------- -->
+    <link href="http://js-grid.com/css/jsgrid.min.css" rel="stylesheet" />
+    <link href="http://js-grid.com/css/jsgrid-theme.min.css" rel="stylesheet" />
+    <!-- jQuery -->
+    @*<script src="~/vendors/jquery/dist/jquery.min.js"></script>*@
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+    </style>
+    <link rel="stylesheet" id="theme-switch" href='@("/css/"+Resources.getCurrentstyelPath())'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+
+            @{Html.RenderAction("MenuLayout", "Home");}
+
+            <div class="right_col" role="main">
+                <div class="">
+
+
+                   
+
+
+                        @RenderBody()
+
+
+                    
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            @*<footer>
+                <div class="pull-right">
+                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>*@
+            <!-- /footer content -->
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.style.switcher.js"></script>
+    <script>
+       
+        //save cookie of style
+         $("#theme-styles > li > a[name=style-anchor]").click(function () {
+            document.cookie = "style=" + $(this).attr("data-theme").split('/')[2] + ".css;Path=/" ;
+            
+        });
+            $(function () {
+                $('#colour-variations ul').styleSwitcher({
+                    defaultThemeId: 'theme-switch',
+                    hasPreview: false,
+                    cookie: {
+                        expires: 30,
+                        isManagingLoad: true
+                    }
+                });
+                $('.option-toggle').click(function () {
+                    $('#colour-variations').toggleClass('sleep');
+                });
+            });
+    </script>
+
+    <!-- -------------------end color change ------------------------------------------------------------ -->
+    <!-- Bootstrap -->
+    <script src="~/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="~/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="~/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+
+    <!-- bootstrap-progressbar -->
+    <script src="~/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- Skycons -->
+    <script src="~/vendors/skycons/skycons.js"></script>
+
+
+    <!-- DateJS -->
+    <script src="~/vendors/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="~/vendors/moment/min/moment.min.js"></script>
+    <script src="~/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    @*<link href="~/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">*@
+
+    <!-- Custom Theme Scripts -->
+    <!-- NProgress -->
+    <script src="~/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="~/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="~/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="~/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="~/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="~/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="~/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="~/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="~/vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+ 
+   
+    <!-- Custom Theme Scripts -->
+    <script src="~/js/main.js"></script>
+
+    @*<link href="~/css/style2.css" rel="stylesheet" />*@
+    <script src="http://js-grid.com/js/jsgrid.min.js"></script>
+   
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- jQuery Sparklines -->
+    <script>
+        $(document).ready(function () {
+            $(".sparkline_one").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
+                type: 'bar',
+                height: '40',
+                barWidth: 9,
+                colorMap: {
+                    '7': '#a1a1a1'
+                },
+                barSpacing: 2,
+                barColor: '#26B99A'
+            });
+
+            $(".sparkline_two").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
+                type: 'line',
+                width: '200',
+                height: '40',
+                lineColor: '#26B99A',
+                fillColor: 'rgba(223, 223, 223, 0.57)',
+                lineWidth: 2,
+                spotColor: '#26B99A',
+                minSpotColor: '#26B99A'
+            });
+        });
+    </script>
+    <!-- /jQuery Sparklines -->
+    <!-- bootstrap-daterangepicker -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var cb = function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            };
+
+            var optionSet1 = {
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: {
+                    days: 60
+                },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'left',
+                buttonClasses: ['btn btn-default'],
+                applyClass: 'btn-small btn-primary',
+                cancelClass: 'btn-small',
+                format: 'MM/DD/YYYY',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Clear',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            };
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+            $('#reportrange').daterangepicker(optionSet1, cb);
+            $('#reportrange').on('show.daterangepicker', function () {
+                console.log("show event fired");
+            });
+            $('#reportrange').on('hide.daterangepicker', function () {
+                console.log("hide event fired");
+            });
+            $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
+                console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+            });
+            $('#reportrange').on('cancel.daterangepicker', function (ev, picker) {
+                console.log("cancel event fired");
+            });
+            $('#options1').click(function () {
+                $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+            });
+            $('#options2').click(function () {
+                $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+            });
+            $('#destroy').click(function () {
+                $('#reportrange').data('daterangepicker').remove();
+            });
+        });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
+    <!-- Skycons -->
+    <script>
+        var icons = new Skycons({
+            "color": "#73879C"
+        }),
+                list = [
+                    "clear-day", "clear-night", "partly-cloudy-day",
+                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                    "fog"
+                ],
+                i;
+
+        for (i = list.length; i--;)
+            icons.set(list[i], list[i]);
+
+        icons.play();
+    </script>
+    <!-- /Skycons -->
+    <script>
+        $(function () {
+            $(".sortable").sortable();
+            $(".sortable").disableSelection();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#single_cal1').daterangepicker({
+                singleDatePicker: true,
+                singleClasses: "picker_1"
+            }, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+            });
+            $('#single_cal2').daterangepicker({
+                singleDatePicker: true,
+                singleClasses: "picker_2"
+            }, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+            });
+            $('#single_cal3').daterangepicker({
+                singleDatePicker: true,
+                singleClasses: "picker_3"
+            }, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+            });
+            $('#single_cal4').daterangepicker({
+                singleDatePicker: true,
+                singleClasses: "picker_4"
+            }, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+            });
+        });
+    </script>
+    <!-- Select2 -->
+    @*<script>
+            $(document).ready(function () {
+                $(".select2_single").select2({
+                    placeholder: "Select",
+
+                });
+                $(".select2_group").select2({});
+                $(".select2_multiple").select2({
+                    maximumSelectionLength: 4,
+                    placeholder: "With Max Selection limit 4",
+                    allowClear: true
+                });
+            });
+    </script>*@
+    <!-- /Select2 -->
+    <!-- jQuery Smart Wizard -->
+    <script>
+            $(document).ready(function () {
+                $('#wizard').smartWizard();
+
+                $('#wizard_verticle').smartWizard({
+                    transitionEffect: 'slide'
+                });
+
+                $('.buttonNext').addClass('btn btn-success');
+                $('.buttonPrevious').addClass('btn btn-primary');
+                $('.buttonFinish').addClass('btn btn-default');
+            });
+    </script>
+    <!-- /jQuery Smart Wizard -->
+    <script>
+            $(document).ready(function () {
+                $('#single_cal1').daterangepicker({
+                    singleDatePicker: true,
+                    singleClasses: "picker_1"
+                }, function (start, end, label) {
+                    console.log(start.toISOString(), end.toISOString(), label);
+                });
+                $('#single_cal2').daterangepicker({
+                    singleDatePicker: true,
+                    singleClasses: "picker_2"
+                }, function (start, end, label) {
+                    console.log(start.toISOString(), end.toISOString(), label);
+                });
+                $('#single_cal3').daterangepicker({
+                    singleDatePicker: true,
+                    singleClasses: "picker_3"
+                }, function (start, end, label) {
+                    console.log(start.toISOString(), end.toISOString(), label);
+                });
+                $('.single_cal4').daterangepicker({
+                    singleDatePicker: true,
+                    singleClasses: "picker_4"
+                }, function (start, end, label) {
+                    console.log(start.toISOString(), end.toISOString(), label);
+                });
+             
+            });
+
+
+
+          
+
+
+
+    </script>
+</body>
+</html>

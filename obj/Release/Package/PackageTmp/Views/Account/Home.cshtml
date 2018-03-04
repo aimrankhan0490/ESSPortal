@@ -1,0 +1,535 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-3 col-sm-6 col-xs-12 sortable">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>@Resources.getDescriptionBykey("My Information")</h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="bith_date">
+                <h2 class="colored_head">@Resources.getDescriptionBykey("Personal Number")</h2>
+                <h2> @Model.PersonalNumber </h2>
+            </div>
+            <div id="gender">
+                <h2 class="colored_head">@Resources.getDescriptionBykey("English Name")</h2>
+                <h2> @Model.EnglishName </h2>
+            </div>
+            <div id="marital_status">
+                <h2 class="colored_head">@Resources.getDescriptionBykey("Arabic Name")</h2>
+                <h2> @Model.ArabicName </h2>
+            </div>
+            <div id="n_o_dependents">
+                <h2 class="colored_head">@Resources.getDescriptionBykey("Joining Date")</h2>
+                <h2> @Model.JoiningDate </h2>
+            </div>
+
+            <hr>
+            <a class="" href="/Home/Details?Group=PersonalInfo"><i class="fa fa-eye"></i> @Resources.getDescriptionBykey("More Details")</a>
+        </div>
+    </div>
+
+
+    <!--------------------------------------->
+    <div class="x_panel loaned_item">
+        <div class="x_content">
+            <a style="color:#fff" href="/Home/Details?Detail=Contacts">
+                <div class="col-md-10">
+
+                    <h2>@Resources.getDescriptionBykey("Contact Information")</h2>
+
+                </div>
+                <div class="col-md-2">
+
+                    <h2>@Model.CountContact</h2>
+
+
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="x_panel col-md-6 square_blue">
+        <div class="x_content">
+            <a href="/Home/Details?Detail=Address">
+                <h2> @Model.CountAddress </h2>
+                <h2> @Resources.getDescriptionBykey("Address") </h2>
+            </a>
+        </div>
+    </div>
+    <div class="x_panel col-md-6 square_blue">
+        <div class="x_content">
+            <a href="/Home/Details?Detail=Identifications">
+                <h2> @Model.CountIdentification </h2>
+                <h2> @Resources.getDescriptionBykey("Identification") </h2>
+            </a>
+        </div>
+    </div>
+
+
+    <!------------------------------------------------>
+
+    <div class="x_panel col-md-6 square_info">
+        <div class="x_content">
+            <a href="/Home/Details?Detail=Banks">
+                <h2> @Model.CountBank </h2>
+                <h2> @Resources.getDescriptionBykey("Bank") </h2>
+            </a>
+
+        </div>
+    </div>
+    <div class="x_panel col-md-6 square_info">
+        <div class="x_content">
+            <a href="/Home/Details?Detail=Dependencies">
+                <h2> @Model.CountDependents </h2>
+                <h2> @Resources.getDescriptionBykey("Dependents") </h2>
+            </a>
+        </div>
+    </div>
+    @*<div class="x_panel col-md-6 square_info">
+            <div class="x_content">
+                <a href="#">
+                    <h2>Medical Insurance</h2>
+                </a>
+
+            </div>
+        </div>*@
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 sortable">
+    <div class="x_panel rect_blue">
+        <div class="x_content">
+
+            <div class="col-md-12 react_blue_content">
+                <a class="" href="/Home/Details?Group=Benifits">
+                    <div class="col-md-10 col-sm-10"><h2>@Resources.getDescriptionBykey("Benefits")</h2></div>
+
+                    <div class="col-md-2 col-sm-2"><h2>@Model.CountBenifits</h2></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    @* <div class="x_panel rect_blue ">
+             <div class="x_content">
+
+                 <div class="col-md-12 react_blue_content">
+                     <a class="" href="#">
+                         <div class="col-md-10"><h2>Contact info</h2> </div>
+                         <div class="col-md-2"><h2>2</h2></div>
+                     </a>
+
+
+                 </div>
+             </div>
+         </div>
+
+        <div class="x_panel col-md-12">
+                 <div class="x_title">
+                     <h2>Cerificates</h2>
+                     <div class="clearfix"></div>
+                 </div>
+                 <div class="x_content ">
+                     <div class="certificates_div">
+
+                         <h4>user centered design</h4>
+                         <span>Expiring in 2323 days</span></br>
+                         <hr>
+                         <a href="#" class=""><i class="fa fa-eye"></i> View all Certificates</a>
+                     </div>
+                 </div>
+             </div>*@
+    <div class="x_panel col-md-12">
+        <div class="x_title">
+            <h2>@Resources.getDescriptionBykey("Total skills")</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="skills">
+
+                <h1>@Model.CountSkills</h1>
+                @*<span>Most recent update to skills</span>
+                    <h3>3/22/2016</h3>*@
+                <div class="clearfix"></div>
+                <hr>
+                <a href="/Home/Details?Group=Skills" class=""><i class="fa fa-eye"></i> @Resources.getDescriptionBykey("More Skills")</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="x_panel col-md-12">
+        <div class="x_title">
+            <h2>@Resources.getDescriptionBykey("Job Details")</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="job_details">
+
+                <div class="padding_top5">
+                    <h2 class="colored_head">@Resources.getDescriptionBykey("Position ID")</h2>
+                    <h2> @Model.PositionId </h2>
+                </div>
+                <div class="padding_top5">
+                    <h2 class="colored_head">@Resources.getDescriptionBykey("Position Description")</h2>
+                    <h2> @Model.PositionDesc </h2>
+                </div>
+                <div class="padding_top5">
+                    <h2 class="colored_head">@Resources.getDescriptionBykey("Department")</h2>
+                    <h2> @Model.Departmentname </h2>
+                </div>
+                <div class="padding_top5">
+                    <h2 class="colored_head">@Resources.getDescriptionBykey("Job ID")</h2>
+                    <h2> @Model.JobDesc </h2>
+                </div>
+                <div class="padding_top5">
+                    <h2 class="colored_head">@Resources.getDescriptionBykey("Job Type")</h2>
+                    <h2> @Model.JobType </h2>
+                </div>
+                @*<div class="padding_top5">
+                        <h2 class="colored_head">Job function</h2>
+                        <h2>0036</h2>
+                    </div>
+                    <div class="padding_top5">
+                        <h2 class="colored_head">Line Manager Name</h2>
+                        <h2>Alfons</h2>
+                    </div>
+                    <div class="padding_top5">
+                        <h2 class="colored_head">Line Manager position</h2>
+                        <h2>Account Manager</h2>
+                    </div>
+
+                    <h2 class="colored_head">position compansation region</h2>
+                    <h2>central</h2>*@
+                <hr>
+                <a href="/Home/Details?Group=Jobs" class=""><i class="fa fa-eye"></i>@Resources.getDescriptionBykey("More Details")</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12 sortable">
+
+    <div class="x_panel rect_blue">
+        <div class="x_content">
+
+            <div class="col-md-12 react_blue_content">
+                <a class="" href="/Payslip/PayslipbyEmployee">
+                    <div class="col-md-9 col-sm-10"><h2>@Resources.getDescriptionBykey("Pay slip")</h2></div>
+                    <div class="col-md-3 col-sm-2"><i class="fa fa-usd" style="font-size:35px;color:white"></i></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    @*<div class="x_panel col-md-12">
+        <div class="x_title">
+            <h2>@Resources.getDescriptionBykey("Pay slip")</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content ">
+            <div class="certificates_div">
+                <div class="row">
+                    <div class="col-md-6 calander-payslip">
+                        <div class="chead"><p>@Model.YearMonth</p></div>
+                        <div class="pay_slip_day">@Model.Datepay</div>
+                        <div class="pay_slip_footer">@Model.DayPaid</div>
+                    </div>
+                    <div class="col-md-6 calander-payslip">
+                        <div class="chead"><p>@Model.YearMonthPrev </p></div>
+                        <div class="pay_slip_day">@Model.DatepayPrev</div>
+                        <div class="pay_slip_footer">@Model.DayPaidPrev </div>
+                    </div>
+                </div>
+                <br />
+                <hr>
+                <a href="/Payslip/PayslipbyEmployee" class=""><i class="fa fa-eye"></i>@Resources.getDescriptionBykey("More Pay slip")</a>
+            </div>
+        </div>
+    </div>*@
+    <div class="x_panel loaned_item">
+        <div class="x_content">
+            <a class="" style="color:#fff" href="/LoanedItem/GetLoanedItemsbyEmployee">
+                <div class="col-md-10">
+                    <h2>@Resources.getDescriptionBykey("loaned Item")</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>@Model.LoanedItemCount</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="x_panel attendence">
+        <div class="x_content ">
+            <a href="/MyAttendance/GetAttendancebyDate">
+                <div style="color:#fff" class="col-md-10">
+
+                    <h2>@Resources.getDescriptionBykey("Attendance")</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>@Model.AttendanceCount</h2>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class="x_panel loaned_item">
+        <div class="x_content">
+            <a style="color:#fff" href="/Home/Details?Group=MedicalInsurance">
+                <div class="col-md-10">
+
+                    <h2>@Resources.getDescriptionBykey("Medical Insurance")</h2>
+
+                </div>
+                <div class="col-md-2">
+
+                    <h2>@Model.CountMedicalInsuarance</h2>
+
+
+                </div>
+            </a>
+        </div>
+    </div>
+
+    @*<div class="x_panel open_jobs">
+            <div class="x_content">
+
+                <div class="col-md-10">
+                    <h2>Open Jobs Item</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>3</h2>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="x_panel open_courses">
+            <div class="x_content">
+
+                <div class="col-md-10">
+                    <h2>Open Courses Item</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>3</h2>
+                </div>
+
+            </div>
+        </div>*@
+</div>
+
+
+<div class="col-md-3 col-sm-6 col-xs-12 sortable">
+
+
+    <div class="x_panel my_excuse">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/ExcuseRequest/ExcuseRequests">
+                <div class="col-md-10">
+                    <h2>@Resources.getDescriptionBykey("My Excuse Request")</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>@Model.MyExcuseCount</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="x_panel my_excuse">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/ExcuseRequest/AbsenceRequests">
+                <div class="col-md-10">
+                    <h2>@Resources.getDescriptionBykey("My Absence Request")</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>@Model.absencecount</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="x_panel my_general ">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/GeneralRequest/GeneralRequests">
+                <div class="col-md-10">
+                    <h2>@Resources.getDescriptionBykey("My General Request")</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>@Model.MyGeneralCount</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    @*  <div class="x_panel my_overtime">
+            <div class="x_content">
+                <div class="col-md-10">
+                    <h2>My Over Time Request</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>3</h2>
+                </div>
+            </div>
+        </div>
+        <div class="x_panel col-md-6 square_blue">
+
+            <div class="x_content">
+
+                <h2>3</h2>
+                <h2>my leave request</h2>
+
+            </div>
+        </div>*@
+
+
+    @*<div class="x_panel col-md-6 square_info">
+            <div class="x_content">
+
+
+                <h1>3</h1>
+                <h2>leave return</h2>
+
+            </div>
+        </div>
+        <div class="x_panel col-md-6 square_info">
+            <div class="x_content">
+
+                <h1>3</h1>
+                <h2>my encashment</h2>
+            </div>
+        </div>*@
+    <div class="x_panel col-md-6 square_blue">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/LeaveRequest/LeaveRequest?reqnature=0">
+                <h2>@Model.CountLeaveRequest</h2>
+                <h2>@Resources.getDescriptionBykey("my Leave") </h2>
+            </a>
+        </div>
+    </div>
+
+    <div class="x_panel col-md-6 square_info">
+        <div class="x_content">
+            <a style="color:#fff" href="/LeaveRequest/TicketEnchasment">
+                <h2>@Model.tcktencahscount</h2>
+                <h2>@Resources.getDescriptionBykey("Ticket encashment")</h2>
+            </a>
+        </div>
+    </div>
+
+    <div class="x_panel col-md-6 square_info">
+
+        <div class="x_content">
+
+            <a style="color:#fff" href="/Loan/LoanRequests">
+                <h2>@Model.MyLoanCount</h2>
+                <h2>@Resources.getDescriptionBykey("My Loans")</h2>
+            </a>
+
+        </div>
+    </div>
+    <div class="x_panel col-md-6 square_info">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/LeaveRequest/TicketRequest">
+
+                <h2>@Model.CountTicketRequest</h2>
+                <h2>@Resources.getDescriptionBykey("Ticket Request")</h2>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- ---------my traning request -------------- -->
+    <div class="x_panel my_traing">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/ExcuseRequest/TrainingRequests">
+                <div class="col-md-10">
+                    <h4>@Resources.getDescriptionBykey("My Training Request")</h4>
+                </div>
+                <div class="col-md-2">
+                    <h3>@Model.tcktencahscount</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- ---------my_recruitment request -------------- -->
+    @*<div class="x_panel my_recruitment">
+            <div class="x_content">
+
+                <div class="col-md-10">
+                    <h4>@Resources.getDescriptionBykey("My Recruitment Request")</h4>
+                </div>
+                <div class="col-md-2">
+                    <h3>3</h3>
+                </div>
+
+            </div>
+        </div>*@
+    <!-- ---------my_letter request -------------- -->
+    <div class="x_panel my_letter">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/GeneralRequest/LetterRequests">
+                <div class="col-md-10">
+                    <h4>@Resources.getDescriptionBykey("My Letter Request")</h4>
+                </div>
+                <div class="col-md-2">
+                    <h3>@Model.CountLeaveRequest</h3>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- ---------my_eos request -------------- -->
+    <div class="x_panel my_eos">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/EOS/EOSRequests">
+                <div class="col-md-10">
+                    <h4>@Resources.getDescriptionBykey("My EOS Request")</h4>
+                </div>
+                <div class="col-md-2">
+                    <h3>@Model.MyEOSCount</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="x_panel col-md-6 square_info">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/BusinessTrip/BusinessTripRequests">
+                <h2>@Model.MyBusinessTripCount</h2>
+                <h2>@Resources.getDescriptionBykey("my Business Trip")</h2>
+            </a>
+
+
+
+        </div>
+    </div>
+    <div class="x_panel col-md-6 square_blue">
+
+        <div class="x_content">
+            <a style="color:#fff" href="/ExcuseRequest/OverTimeRequests">
+                <h2>@Model.CountLeaveRequest</h2>
+                <h2>@Resources.getDescriptionBykey("my Overttime") </h2>
+            </a>
+        </div>
+    </div>
+
+</div>
+

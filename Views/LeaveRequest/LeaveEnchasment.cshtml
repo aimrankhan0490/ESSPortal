@@ -1,0 +1,284 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "LeaveEnchasment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>@Resources.getDescriptionBykey("Employee Leave Enchasment")  </h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            @*<a class="btn btn-app" href="/LeaveRequest/CreateLeaveEnchasment" id="aurl">
+                <i class="fa fa-plus"></i> @Resources.getDescriptionBykey("Add")
+            </a>*@
+
+
+            <div class="clearfix"></div>
+            <table id="datatable-buttons" class="table table-striped table-bordered bulk_action">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="check-all" class="flat"></th>
+                        <th> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
+                        <th>@Resources.getDescriptionBykey("Request Number") </th>
+                        <th>@Resources.getDescriptionBykey("Request Date")</th>
+                        @*<th>@Resources.getDescriptionBykey("Personal Number")</th>
+                        <th>@Resources.getDescriptionBykey("Name")</th>*@
+                        <th>@Resources.getDescriptionBykey("Leave Type")</th>
+                        <th>@Resources.getDescriptionBykey("From Date")</th>
+                        <th>@Resources.getDescriptionBykey("To Date")</th>
+                        <th>@Resources.getDescriptionBykey("Status")</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var @item in Model)
+                    {
+                        <tr>
+                            <td><input type="checkbox" class="flat" name="table_records"></td>
+                            @*<td>1</td>*@
+                            <td><a href="@item.URL"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                            <td>@item.LeaveRequest</td>
+                            <td>@item.RequestDate</td>
+                            @*<td>@item.PersonalNumber</td>
+                            <td>@item.Worker</td>*@
+                            <td>@item.LeaveType</td>
+                            <td>@item.FromDate</td>
+                            <td>@item.ToDate </td>
+                            <td>@item.State </td>
+
+
+                        </tr>
+                    }
+
+
+
+
+                </tbody>
+            </table>
+            @*<div id="jsGrid2"></div>
+                <script>
+                $(function () {
+
+                    $("#jsGrid2").jsGrid({
+                        height: "90%",
+                        width: "100%",
+                        filtering: true,
+                        editing: true,
+                        sorting: true,
+                        paging: true,
+                        autoload: true,
+                        pageSize: 15,
+                        pageButtonCount: 5,
+                        deleteConfirm: "Do you really want to delete the client?",
+                        controller: db,
+                        fields: [
+                            {
+                                headerTemplate: function () {
+                                    return $("<H4>").attr("type", "TEXT").text("Action")
+
+                                },
+                                itemTemplate: function (_, item) {
+                                    return $("<input>").attr("type", "checkbox")
+                                            .prop("checked", $.inArray(item, selectedItems) > -1)
+                                            .on("change", function () {
+                                                $(this).is(":checked") ? selectItem(item) : unselectItem(item);
+                                            });
+                                },
+                                align: "center",
+                                width: 50
+                            },
+                            { name: "LeaveRequest", type: "text", width: 70 },
+                            { name: "LeaveType", type: "text", width: 70 },
+                            { name: "RequestDate", type: "text", width: 70 },
+                            { name: "PersonalNumber", type: "text", width: 70 },
+                            { name: "Worker", type: "text", width: 70 },
+                            { name: "FromDate", type: "text", width: 70 },
+                            { name: "ToDate", type: "text", width: 70 },
+                            { name: "State", type: "text", width: 70 },
+
+                            {type:'control'}
+                        ],
+                        data: [
+                            '', '', '',
+                        ],
+
+
+                    });
+                });
+
+                var selectedItems = [];
+
+                var selectItem = function (item) {
+                    selectedItems.push(item);
+                };
+
+                var unselectItem = function (item) {
+                    selectedItems = $.grep(selectedItems, function (i) {
+                        return i !== item;
+                    });
+                };
+                </script>*@
+            <script>
+                $(document).ready(function () {
+
+
+                    const fillRange = (start, end) => {
+                        return Array(end - start + 1).fill().map((item, index) => start + index);
+                    };
+
+                    var handleDataTableButtons = function () {
+                        table_length = $('#datatable-buttons').find('tr')[0].cells.length;
+                        const exported_coulmns = fillRange(2, table_length - 1);
+                         var direction = '@Resources.getDirectionByLanguageId()';
+                        var languageUrl = "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/English.json";
+                        if (direction == 'RTL') {
+                            languageUrl = "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Arabic.json";
+                        }
+
+                        if ($("#datatable-buttons").length) {
+                            $("#datatable-buttons").DataTable({
+                                "pagingType": "full_numbers",
+
+                                dom: "Bfrtip",
+                                "language": {
+                                    "url": languageUrl
+                                },
+                                buttons: [
+                                    {
+                                        extend: "copy",
+                                        title: 'Employee Leave Enchasment',
+                                        className: "btn-sm",
+                                        text: "Copy"
+                                        , exportOptions: {
+                                            columns: exported_coulmns
+                                        }
+                                    },
+                                    {
+                                        extend: "csv",
+                                        title: 'Employee Leave Enchasment',
+                                        className: "btn-sm",
+                                        text: "Excel"
+                                        , exportOptions: {
+                                            columns: exported_coulmns
+                                        }
+                                    },
+                                    
+                                    {
+                                        extend: "pdfHtml5",
+                                        title: 'Employee Leave Enchasment',
+                                        className: "btn-sm",
+                                        text: "Print"
+                                        , exportOptions: {
+                                            columns: exported_coulmns
+                                        }
+
+                                    },
+                                ], initComplete: function () {
+                                    copy_btn = $("#datatable-buttons_wrapper > div.dt-buttons.btn-group > a.btn.btn-default.buttons-copy.buttons-html5.btn-sm");
+                                    excel_btn = $("#datatable-buttons_wrapper > div.dt-buttons.btn-group > a.btn.btn-default.buttons-csv.buttons-html5.btn-sm");
+                                    print_btn = $("#datatable-buttons_wrapper > div.dt-buttons.btn-group > a.btn.btn-default.buttons-pdf.btn-sm");
+                                    if (copy_btn.length > 0) {
+
+                                        copy_btn.addClass("btn-app");
+                                        copy_btn.empty();
+                                        copy_btn.append("<i class='fa fa-copy'></i><span>Copy</span>");
+                                    }
+                                    if (excel_btn.length > 0) {
+                                        excel_btn.addClass("btn-app");
+                                        excel_btn.empty();
+                                        excel_btn.append("<i class='fa fa-file-excel-o'></i><span>Excel</span>");
+                                    }
+                                    if (print_btn.length > 0) {
+                                        print_btn.addClass("btn-app");
+                                        print_btn.empty();
+                                        print_btn.append("<i class='fa fa-print'></i><span>Print</span>");
+                                    }
+
+                                    var addResource = '@Resources.getDescriptionBykey( "Add")';
+                                    var direction = '@Resources.getDirectionByLanguageId()';
+
+                                    if (direction == 'LTR') {
+                                        $('#datatable-buttons_wrapper > div.dt-buttons.btn-group').prepend(" <a class='btn btn-app' href='/LeaveRequest/CreateLeaveEnchasment' id='aurl'>  <i class='fa fa-plus'></i>" + addResource + " </a>");
+                                    }
+                                    else {
+                                        $('#datatable-buttons_wrapper > div.dt-buttons.btn-group').append(" <a class='btn btn-app' href='/LeaveRequest/CreateLeaveEnchasment' id='aurl'>  <i class='fa fa-plus'></i>" + addResource + " </a>");
+                                    }
+                                }
+                            });
+                        }
+                    };
+                    TableManageButtons = function () {
+                        "use strict";
+                        return {
+                            init: function () {
+                                handleDataTableButtons();
+                            }
+                        };
+                    }();
+
+
+
+                    $('#datatable-keytable').DataTable({
+                        keys: true
+                    });
+
+                    $('#datatable-responsive').DataTable();
+
+                    $('#datatable-scroller').DataTable({
+                        ajax: "js/datatables/json/scroller-demo.json",
+                        deferRender: true,
+                        scrollY: 380,
+                        scrollCollapse: true,
+                        scroller: true
+                    });
+
+                    $('#datatable-fixed-header').DataTable({
+                        fixedHeader: true
+                    });
+
+                    var $datatable = $('#datatable-checkbox');
+
+                    $datatable.dataTable({
+                        'order': [[2, 'asc']],
+                        'columnDefs': [
+                            { orderable: false, targets: [0] }
+                        ]
+                    });
+                    $datatable.on('draw.dt', function () {
+                        $('input').iCheck({
+                            checkboxClass: 'icheckbox_flat-green'
+                        });
+                    });
+
+                    TableManageButtons.init();
+                   
+
+                    function getUrlVars() {
+                        var vars = [], hash;
+                        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                        for (var i = 0; i < hashes.length; i++) {
+                            hash = hashes[i].split('=');
+                            vars.push(hash[0]);
+                            vars[hash[0]] = hash[1];
+                        }
+                        return vars;
+                    }
+
+                });
+            </script>
+        </div>
+    </div>
+</div>
+

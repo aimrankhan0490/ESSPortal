@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+  <xs:import schemaLocation="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://185.2.103.29:3340/MicrosoftDynamicsAXAif60/SDSAttachmentRD/xppservice.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q1:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Primary" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Private" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="SDSAddressListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q2:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmAddressList" nillable="true" type="tns:ArrayOfAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSAddressListDC" nillable="true" type="tns:SDSAddressListDC" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="SDSAlternateWorkerList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q3:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmnameList" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmpersonnelNoList" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmworkerRecIdList" nillable="true" type="q6:ArrayOflong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSAlternateWorkerList" nillable="true" type="tns:SDSAlternateWorkerList" />
+  <xs:complexType name="Attendnace">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q7:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Event" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsExcuse" type="q7:NoYes" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Project" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Worker" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Attendnace" nillable="true" type="tns:Attendnace" />
+  <xs:complexType name="SDSAttendanceInfoListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q8:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmAttendanceList" nillable="true" type="tns:ArrayOfAttendnace" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSAttendanceInfoListDC" nillable="true" type="tns:SDSAttendanceInfoListDC" />
+  <xs:complexType name="ArrayOfAttendnace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attendnace" nillable="true" type="tns:Attendnace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttendnace" nillable="true" type="tns:ArrayOfAttendnace" />
+  <xs:complexType name="SDSAttendanceLogLookUpList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q9:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmTimeInOutList" nillable="true" type="q10:ArrayOfstring" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmTransDateList" nillable="true" type="q11:ArrayOfdateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSAttendanceLogLookUpList" nillable="true" type="tns:SDSAttendanceLogLookUpList" />
+  <xs:complexType name="Bank">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q12:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bank_x0020_Account_x0020_Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bank_x0020_Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bank_x0020_IBAN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bank_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Swift_x0020_Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Bank" nillable="true" type="tns:Bank" />
+  <xs:complexType name="SDSBankInfoListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q13:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmBankInfoList" nillable="true" type="tns:ArrayOfBank" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSBankInfoListDC" nillable="true" type="tns:SDSBankInfoListDC" />
+  <xs:complexType name="ArrayOfBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bank" nillable="true" type="tns:Bank" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBank" nillable="true" type="tns:ArrayOfBank" />
+  <xs:complexType name="BenefitAllowanceDeduction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q14:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Benefits_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Benefits_x0020_Type" type="tns:SDSBenefitsType" />
+          <xs:element minOccurs="0" name="Percent" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BenefitAllowanceDeduction" nillable="true" type="tns:BenefitAllowanceDeduction" />
+  <xs:simpleType name="SDSBenefitsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Basic">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Allowances">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deductions">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pension">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cost" />
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSBenefitsType" nillable="true" type="tns:SDSBenefitsType" />
+  <xs:complexType name="SDSBenefitsAllowDedListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q15:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmbenefitsAllowDedList" nillable="true" type="tns:ArrayOfBenefitAllowanceDeduction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSBenefitsAllowDedListDC" nillable="true" type="tns:SDSBenefitsAllowDedListDC" />
+  <xs:complexType name="ArrayOfBenefitAllowanceDeduction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BenefitAllowanceDeduction" nillable="true" type="tns:BenefitAllowanceDeduction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBenefitAllowanceDeduction" nillable="true" type="tns:ArrayOfBenefitAllowanceDeduction" />
+  <xs:complexType name="Benefits">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q16:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Airport_x0020_from" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Airport_x0020_to" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Annual_x0020_leave" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Basic_x0020_Salary" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Benefits_x0020_allowances_x0020_deductions_x0020_list" nillable="true" type="tns:SDSBenefitsAllowDedListDC" />
+          <xs:element minOccurs="0" name="Contract_x0020_End_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Contract_x0020_Start_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No_x0020_of_x0020_tickets" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Pay_x0020_Group" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Salary_x0020_Scale" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ticket_x0020_class" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ticket_x0020_rates" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Benefits" nillable="true" type="tns:Benefits" />
+  <xs:complexType name="BusinessTripRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q17:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccomodationProvided" type="q17:NoYes" />
+          <xs:element minOccurs="0" name="AlternativeWorker" type="xs:long" />
+          <xs:element minOccurs="0" name="Alternative_x0020_worker_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttachmentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MealProvided" type="q17:NoYes" />
+          <xs:element minOccurs="0" name="Name-Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoOfDays" type="xs:int" />
+          <xs:element minOccurs="0" name="PerdeemAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RequestExistEntry" type="q17:NoYes" />
+          <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestVisa" type="q17:NoYes" />
+          <xs:element minOccurs="0" name="ToDaTE" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TransportationProvided" type="q17:NoYes" />
+          <xs:element minOccurs="0" name="WorkerRecid" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowItem" type="ser:guid" />
+          <xs:element minOccurs="0" name="WorkflowStatus" type="tns:SDSWorkflowState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessTripRequest" nillable="true" type="tns:BusinessTripRequest" />
+  <xs:simpleType name="SDSWorkflowState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSubmitted" />
+      <xs:enumeration value="Submitted" />
+      <xs:enumeration value="PendingApproval" />
+      <xs:enumeration value="PendingComplete" />
+      <xs:enumeration value="Approved" />
+      <xs:enumeration value="Returned" />
+      <xs:enumeration value="ChangeRequest" />
+      <xs:enumeration value="WorkflowCompleted" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="PendingCancellation" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Denied" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSWorkflowState" nillable="true" type="tns:SDSWorkflowState" />
+  <xs:complexType name="SDSBusinessTripRequestListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q18:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmBusinessTripRequestList" nillable="true" type="tns:ArrayOfBusinessTripRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSBusinessTripRequestListDC" nillable="true" type="tns:SDSBusinessTripRequestListDC" />
+  <xs:complexType name="ArrayOfBusinessTripRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessTripRequest" nillable="true" type="tns:BusinessTripRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessTripRequest" nillable="true" type="tns:ArrayOfBusinessTripRequest" />
+  <xs:complexType name="SDSBusinessTripRequestReasonCodeList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q19:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q20:ArrayOfstring" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReasonCodeList" nillable="true" type="q21:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSBusinessTripRequestReasonCodeList" nillable="true" type="tns:SDSBusinessTripRequestReasonCodeList" />
+  <xs:complexType name="Competencies_x0020_Certificates">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q22:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Certificate_x0020_type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="End_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Start_x0020_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies_x0020_Certificates" nillable="true" type="tns:Competencies_x0020_Certificates" />
+  <xs:complexType name="SDSCompetencies_CertificatesListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q23:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCompetencies_x0020_Certificates" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_CertificatesListDC" nillable="true" type="tns:SDSCompetencies_CertificatesListDC" />
+  <xs:complexType name="ArrayOfCompetencies_x0020_Certificates">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Competencies_x0020_Certificates" nillable="true" type="tns:Competencies_x0020_Certificates" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetencies_x0020_Certificates" nillable="true" type="tns:ArrayOfCompetencies_x0020_Certificates" />
+  <xs:complexType name="SDSCompetencies_CourseListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q24:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCometencies_x0020_Courses" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_CourseListDC" nillable="true" type="tns:SDSCompetencies_CourseListDC" />
+  <xs:complexType name="ArrayOfCometencies_x0020_Courses">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cometencies_x0020_Courses" nillable="true" type="tns:Cometencies_x0020_Courses" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCometencies_x0020_Courses" nillable="true" type="tns:ArrayOfCometencies_x0020_Courses" />
+  <xs:complexType name="Cometencies_x0020_Courses">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q25:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Courses" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="End_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Start_x0020_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cometencies_x0020_Courses" nillable="true" type="tns:Cometencies_x0020_Courses" />
+  <xs:complexType name="Competencies_x0020_Educaiton">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q26:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Education" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="End_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Level_x0020_of_x0020_educaiton" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Start_x0020_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies_x0020_Educaiton" nillable="true" type="tns:Competencies_x0020_Educaiton" />
+  <xs:complexType name="SDSCompetencies_EducationListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q27:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCompetencies_x0020_Educaiton" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_EducationListDC" nillable="true" type="tns:SDSCompetencies_EducationListDC" />
+  <xs:complexType name="ArrayOfCompetencies_x0020_Educaiton">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Competencies_x0020_Educaiton" nillable="true" type="tns:Competencies_x0020_Educaiton" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetencies_x0020_Educaiton" nillable="true" type="tns:ArrayOfCompetencies_x0020_Educaiton" />
+  <xs:complexType name="Competencies_x0020_position_x0020_of_x0020_trust">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q28:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Employer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="End_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Start_x0020_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies_x0020_position_x0020_of_x0020_trust" nillable="true" type="tns:Competencies_x0020_position_x0020_of_x0020_trust" />
+  <xs:complexType name="SDSCompetencies_PositionTrustListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q29:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCompetencies_x0020_position_x0020_of_x0020_trust" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_PositionTrustListDC" nillable="true" type="tns:SDSCompetencies_PositionTrustListDC" />
+  <xs:complexType name="ArrayOfCompetencies_x0020_position_x0020_of_x0020_trust">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Competencies_x0020_position_x0020_of_x0020_trust" nillable="true" type="tns:Competencies_x0020_position_x0020_of_x0020_trust" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetencies_x0020_position_x0020_of_x0020_trust" nillable="true" type="tns:ArrayOfCompetencies_x0020_position_x0020_of_x0020_trust" />
+  <xs:complexType name="Competencies_x0020_Professional_x0020_Experience">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q30:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Employer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="End_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Start_x0020_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies_x0020_Professional_x0020_Experience" nillable="true" type="tns:Competencies_x0020_Professional_x0020_Experience" />
+  <xs:complexType name="SDSCompetencies_ProfExpListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q31:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCompetencies_x0020_Professional_x0020_Experience" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_ProfExpListDC" nillable="true" type="tns:SDSCompetencies_ProfExpListDC" />
+  <xs:complexType name="ArrayOfCompetencies_x0020_Professional_x0020_Experience">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Competencies_x0020_Professional_x0020_Experience" nillable="true" type="tns:Competencies_x0020_Professional_x0020_Experience" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetencies_x0020_Professional_x0020_Experience" nillable="true" type="tns:ArrayOfCompetencies_x0020_Professional_x0020_Experience" />
+  <xs:complexType name="Competencies_x0020_Project_x0020_Role">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q32:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="End_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Project_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Start_x0020_date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies_x0020_Project_x0020_Role" nillable="true" type="tns:Competencies_x0020_Project_x0020_Role" />
+  <xs:complexType name="SDSCompetencies_ProjectRoleListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q33:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCompetencies_x0020_Project_x0020_Role" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_ProjectRoleListDC" nillable="true" type="tns:SDSCompetencies_ProjectRoleListDC" />
+  <xs:complexType name="ArrayOfCompetencies_x0020_Project_x0020_Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Competencies_x0020_Project_x0020_Role" nillable="true" type="tns:Competencies_x0020_Project_x0020_Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetencies_x0020_Project_x0020_Role" nillable="true" type="tns:ArrayOfCompetencies_x0020_Project_x0020_Role" />
+  <xs:complexType name="Competencies_x0020_skills">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q34:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Approved" type="q34:NoYes" />
+          <xs:element minOccurs="0" name="Approved_x0020_by" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Examiner" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Experience" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Skill" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies_x0020_skills" nillable="true" type="tns:Competencies_x0020_skills" />
+  <xs:complexType name="SDSCompetencies_SkillsListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q35:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfCompetencies_x0020_skills" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSCompetencies_SkillsListDC" nillable="true" type="tns:SDSCompetencies_SkillsListDC" />
+  <xs:complexType name="ArrayOfCompetencies_x0020_skills">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Competencies_x0020_skills" nillable="true" type="tns:Competencies_x0020_skills" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompetencies_x0020_skills" nillable="true" type="tns:ArrayOfCompetencies_x0020_skills" />
+  <xs:complexType name="Competencies">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q36:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Certification_x0020_List" nillable="true" type="tns:SDSCompetencies_CertificatesListDC" />
+          <xs:element minOccurs="0" name="Course_x0020_List" nillable="true" type="tns:SDSCompetencies_CourseListDC" />
+          <xs:element minOccurs="0" name="Educaiton_x0020_List" nillable="true" type="tns:SDSCompetencies_EducationListDC" />
+          <xs:element minOccurs="0" name="Position_x0020_of_x0020_Trust_x0020_List" nillable="true" type="tns:SDSCompetencies_PositionTrustListDC" />
+          <xs:element minOccurs="0" name="Project_x0020_experience_x0020_list" nillable="true" type="tns:SDSCompetencies_ProfExpListDC" />
+          <xs:element minOccurs="0" name="Project_x0020_role_x0020_list" nillable="true" type="tns:SDSCompetencies_ProjectRoleListDC" />
+          <xs:element minOccurs="0" name="Skill_x0020_list" nillable="true" type="tns:SDSCompetencies_SkillsListDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Competencies" nillable="true" type="tns:Competencies" />
+  <xs:complexType name="Dashboard_x0020_Employee">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q37:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count_x0020_AbsenceRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Address" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Attendance" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Bank" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_BusinessTripRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Contact" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Dependents" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_EOS_x0020_Request" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_ExcuseRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_GeneralRequest_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Identification" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LeaveEncashment" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LeavePlanning" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LeaveRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LetterRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LoanRequest_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Loaned_x0020_Items" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Medical_x0020_Insurance" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_OvertimeRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_Skills" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_TicketEncashment" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_TicketRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_TrainingRequest" type="xs:int" />
+          <xs:element minOccurs="0" name="Date_x0020_Payslip" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Date_x0020_Payslip_x0020_Previous" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_x0020_Employee" nillable="true" type="tns:Dashboard_x0020_Employee" />
+  <xs:complexType name="Dashboard_x0020_Manager">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q38:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count_x0020_BusinessTripApproval_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_EndOfServiceApproval_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_ExcuseApproval_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_GeneralApproval_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LeaveApproval_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_LoanApproval_x0020_" type="xs:int" />
+          <xs:element minOccurs="0" name="Count_x0020_TotalApproval_x0020_" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_x0020_Manager" nillable="true" type="tns:Dashboard_x0020_Manager" />
+  <xs:complexType name="Dashboard">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q39:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Employee_x0020_Dashboard" nillable="true" type="tns:Dashboard_x0020_Employee" />
+          <xs:element minOccurs="0" name="Manager_x0020_Dashboard" nillable="true" type="tns:Dashboard_x0020_Manager" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard" nillable="true" type="tns:Dashboard" />
+  <xs:complexType name="Dependent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q40:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Arabic_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Birth_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Dependent_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="English_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Medical_x0020_insurance_x0020_cover" type="q40:NoYes" />
+          <xs:element minOccurs="0" name="Relationship" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ticket_x0020_Cover" type="q40:NoYes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dependent" nillable="true" type="tns:Dependent" />
+  <xs:complexType name="SDSDependentInfoListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q41:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmIdentificationInfoList" nillable="true" type="tns:ArrayOfDependent" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSDependentInfoListDC" nillable="true" type="tns:SDSDependentInfoListDC" />
+  <xs:complexType name="ArrayOfDependent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dependent" nillable="true" type="tns:Dependent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDependent" nillable="true" type="tns:ArrayOfDependent" />
+  <xs:complexType name="SDSDestinationIdIList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q42:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q43:ArrayOfstring" />
+          <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDestinationIdList" nillable="true" type="q44:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSDestinationIdIList" nillable="true" type="tns:SDSDestinationIdIList" />
+  <xs:complexType name="EosRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q45:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachmentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EOSRequestType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EosRequestId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastWorkingDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name-Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NoticeStartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkerRecid" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowItem" type="ser:guid" />
+          <xs:element minOccurs="0" name="Workflow_x0020_status" type="tns:SDSWorkflowState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EosRequest" nillable="true" type="tns:EosRequest" />
+  <xs:complexType name="SDSEosRequestIdIList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q46:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReqeustDescriptionList" nillable="true" type="q47:ArrayOfstring" />
+          <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmRequestIdList" nillable="true" type="q48:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSEosRequestIdIList" nillable="true" type="tns:SDSEosRequestIdIList" />
+  <xs:complexType name="SDSEosRequestListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q49:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmEosRequestList" nillable="true" type="tns:ArrayOfEosRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSEosRequestListDC" nillable="true" type="tns:SDSEosRequestListDC" />
+  <xs:complexType name="ArrayOfEosRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EosRequest" nillable="true" type="tns:EosRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEosRequest" nillable="true" type="tns:ArrayOfEosRequest" />
+  <xs:complexType name="SDSEosRequestReasonCodeList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q50:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q51:ArrayOfstring" />
+          <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReasonCodeList" nillable="true" type="q52:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSEosRequestReasonCodeList" nillable="true" type="tns:SDSEosRequestReasonCodeList" />
+  <xs:complexType name="Training_x0020_course_x0020_location">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q53:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Course_x0020_type_x0020_description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Course_x0020_type_x0020_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Training_x0020_course_x0020_location" nillable="true" type="tns:Training_x0020_course_x0020_location" />
+  <xs:complexType name="SDSExcuse_CourseLocationListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q54="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q54:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfTraining_x0020_course_x0020_location" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSExcuse_CourseLocationListDC" nillable="true" type="tns:SDSExcuse_CourseLocationListDC" />
+  <xs:complexType name="ArrayOfTraining_x0020_course_x0020_location">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Training_x0020_course_x0020_location" nillable="true" type="tns:Training_x0020_course_x0020_location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTraining_x0020_course_x0020_location" nillable="true" type="tns:ArrayOfTraining_x0020_course_x0020_location" />
+  <xs:complexType name="Training_x0020_course_x0020_type">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q55:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Course_x0020_type_x0020_description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Course_x0020_type_x0020_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Training_x0020_course_x0020_type" nillable="true" type="tns:Training_x0020_course_x0020_type" />
+  <xs:complexType name="SDSExcuse_CourseTypeListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q56="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q56:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfTraining_x0020_course_x0020_type" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSExcuse_CourseTypeListDC" nillable="true" type="tns:SDSExcuse_CourseTypeListDC" />
+  <xs:complexType name="ArrayOfTraining_x0020_course_x0020_type">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Training_x0020_course_x0020_type" nillable="true" type="tns:Training_x0020_course_x0020_type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTraining_x0020_course_x0020_type" nillable="true" type="tns:ArrayOfTraining_x0020_course_x0020_type" />
+  <xs:complexType name="ExcuseRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q57:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachmentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Course_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Course_x0020_type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExceedLimit" type="q57:NoYes" />
+          <xs:element minOccurs="0" name="ExcuseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FromTime" type="xs:int" />
+          <xs:element minOccurs="0" name="Name-Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No.ofHours" type="xs:int" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToTime" type="xs:int" />
+          <xs:element minOccurs="0" name="Training_x0020_Fee" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Training_x0020_Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Training_x0020_deadline" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Training_x0020_end_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Training_x0020_start_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkerRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowItem" type="ser:guid" />
+          <xs:element minOccurs="0" name="WorkflowStatus" type="tns:SDSWorkflowState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExcuseRequest" nillable="true" type="tns:ExcuseRequest" />
+  <xs:complexType name="SDSExcuseRequestListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q58="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q58:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmExcuseRequestList" nillable="true" type="tns:ArrayOfExcuseRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSExcuseRequestListDC" nillable="true" type="tns:SDSExcuseRequestListDC" />
+  <xs:complexType name="ArrayOfExcuseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExcuseRequest" nillable="true" type="tns:ExcuseRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExcuseRequest" nillable="true" type="tns:ArrayOfExcuseRequest" />
+  <xs:complexType name="SDSExcuseRequestReasonCodeList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q59="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q59:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q60:ArrayOfstring" />
+          <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReasonCodeList" nillable="true" type="q61:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSExcuseRequestReasonCodeList" nillable="true" type="tns:SDSExcuseRequestReasonCodeList" />
+  <xs:complexType name="SDSExcuseTypeIdIList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q62:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q63:ArrayOfstring" />
+          <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmExcuseTypeIdList" nillable="true" type="q64:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSExcuseTypeIdIList" nillable="true" type="tns:SDSExcuseTypeIdIList" />
+  <xs:complexType name="GeneralRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q65="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q65:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachmentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="General_x0020_nature" type="tns:SDSGeneralNature" />
+          <xs:element minOccurs="0" name="Group_x0020_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reason_x0020_Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Report_x0020_language" type="tns:SDSReportLang" />
+          <xs:element minOccurs="0" name="Request_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Send_x0020_to" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" type="tns:SDSWorkflowState" />
+          <xs:element minOccurs="0" name="Transaction_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Transaction_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Worker_x0020_rec_x0020_id" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowItem" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralRequest" nillable="true" type="tns:GeneralRequest" />
+  <xs:simpleType name="SDSGeneralNature">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="General" />
+      <xs:enumeration value="Letter" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSGeneralNature" nillable="true" type="tns:SDSGeneralNature" />
+  <xs:simpleType name="SDSReportLang">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="En" />
+      <xs:enumeration value="Ar" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSReportLang" nillable="true" type="tns:SDSReportLang" />
+  <xs:complexType name="SDSGeneralRequestIdInfoList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q66="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q66:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReqeustDescriptionList" nillable="true" type="q67:ArrayOfstring" />
+          <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmRequestIdList" nillable="true" type="q68:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSGeneralRequestIdInfoList" nillable="true" type="tns:SDSGeneralRequestIdInfoList" />
+  <xs:complexType name="SDSGeneralRequestListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q69="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q69:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmGeneralRequestList" nillable="true" type="tns:ArrayOfGeneralRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSGeneralRequestListDC" nillable="true" type="tns:SDSGeneralRequestListDC" />
+  <xs:complexType name="ArrayOfGeneralRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneralRequest" nillable="true" type="tns:GeneralRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneralRequest" nillable="true" type="tns:ArrayOfGeneralRequest" />
+  <xs:complexType name="SDSGeneralRequestReasonCodeInfoList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q70="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q70:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q71:ArrayOfstring" />
+          <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReasonCodeList" nillable="true" type="q72:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSGeneralRequestReasonCodeInfoList" nillable="true" type="tns:SDSGeneralRequestReasonCodeInfoList" />
+  <xs:complexType name="Identification">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q73="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q73:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="End_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Identification_x0020_Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Identification_x0020_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Issue_x0020_Agency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Issue_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Issue_x0020_place" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Identification" nillable="true" type="tns:Identification" />
+  <xs:complexType name="SDSIdentificationInfoListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q74="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q74:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmIdentificationInfoList" nillable="true" type="tns:ArrayOfIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSIdentificationInfoListDC" nillable="true" type="tns:SDSIdentificationInfoListDC" />
+  <xs:complexType name="ArrayOfIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Identification" nillable="true" type="tns:Identification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentification" nillable="true" type="tns:ArrayOfIdentification" />
+  <xs:complexType name="Job_x0020_Area_x0020_of_x0020_responsibility">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q75="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q75:XppObjectBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Job_x0020_Area_x0020_of_x0020_responsibility" nillable="true" type="tns:Job_x0020_Area_x0020_of_x0020_responsibility" />
+  <xs:complexType name="SDSJobDetails_ResponsibiltyListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q76="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q76:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfJob_x0020_Area_x0020_of_x0020_responsibility" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSJobDetails_ResponsibiltyListDC" nillable="true" type="tns:SDSJobDetails_ResponsibiltyListDC" />
+  <xs:complexType name="ArrayOfJob_x0020_Area_x0020_of_x0020_responsibility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Job_x0020_Area_x0020_of_x0020_responsibility" nillable="true" type="tns:Job_x0020_Area_x0020_of_x0020_responsibility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJob_x0020_Area_x0020_of_x0020_responsibility" nillable="true" type="tns:ArrayOfJob_x0020_Area_x0020_of_x0020_responsibility" />
+  <xs:complexType name="Job_x0020_Skills">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q77="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q77:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Importance" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rating_x0020_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rating_x0020_Level_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Skill_x0020_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Skill_x0020_Id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Job_x0020_Skills" nillable="true" type="tns:Job_x0020_Skills" />
+  <xs:complexType name="SDSJobDetails_SkillsListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q78="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q78:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfJob_x0020_Skills" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSJobDetails_SkillsListDC" nillable="true" type="tns:SDSJobDetails_SkillsListDC" />
+  <xs:complexType name="ArrayOfJob_x0020_Skills">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Job_x0020_Skills" nillable="true" type="tns:Job_x0020_Skills" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJob_x0020_Skills" nillable="true" type="tns:ArrayOfJob_x0020_Skills" />
+  <xs:complexType name="Job_x0020_Work_x0020_Task">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q79="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q79:XppObjectBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Job_x0020_Work_x0020_Task" nillable="true" type="tns:Job_x0020_Work_x0020_Task" />
+  <xs:complexType name="SDSJobDetails_WorkTaskListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q80="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q80:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfJob_x0020_Work_x0020_Task" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSJobDetails_WorkTaskListDC" nillable="true" type="tns:SDSJobDetails_WorkTaskListDC" />
+  <xs:complexType name="ArrayOfJob_x0020_Work_x0020_Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Job_x0020_Work_x0020_Task" nillable="true" type="tns:Job_x0020_Work_x0020_Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJob_x0020_Work_x0020_Task" nillable="true" type="tns:ArrayOfJob_x0020_Work_x0020_Task" />
+  <xs:complexType name="Job_x0020_details">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q81="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q81:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Area_x0020_of_x0020_Respobsibilty_x0020_List" nillable="true" type="tns:SDSJobDetails_ResponsibiltyListDC" />
+          <xs:element minOccurs="0" name="Job_x0020_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Skill_x0020_List" nillable="true" type="tns:SDSJobDetails_SkillsListDC" />
+          <xs:element minOccurs="0" name="Work_x0020_Task_x0020_List" nillable="true" type="tns:SDSJobDetails_WorkTaskListDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Job_x0020_details" nillable="true" type="tns:Job_x0020_details" />
+  <xs:complexType name="LeaveRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q82="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q82:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alternative_x0020_worker" type="xs:long" />
+          <xs:element minOccurs="0" name="Alternative_x0020_worker_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Approved" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="Approved_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AttachmentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Converted" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="Converted_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Exceed_x0020_leave_x0020_balance" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="Exceed_x0020_ticket_x0020_balance" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="From_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Leave_x0020_request_x0020_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Leave_x0020_request_x0020_nature" type="tns:SDSLeaveReqNature" />
+          <xs:element minOccurs="0" name="Leave_x0020_request_x0020_reference_x0020_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Leave_x0020_type_x0020_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No_x0020_of_x0020_tickets" type="xs:int" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reason_x0020_code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Request_x0020_exit_x0020_entry" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="Request_x0020_visa" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="Returned" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="Returned_x0020_approval_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Returned_x0020_approval_x0020_user" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Returned_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Salary_x0020_in_x0020_advance" type="q82:NoYes" />
+          <xs:element minOccurs="0" name="To_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Transaction_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkerRecid" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowItem" type="ser:guid" />
+          <xs:element minOccurs="0" name="Workflow_x0020_status" type="tns:SDSWorkflowState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LeaveRequest" nillable="true" type="tns:LeaveRequest" />
+  <xs:simpleType name="SDSLeaveReqNature">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LeaveRequest" />
+      <xs:enumeration value="LeaveReturn" />
+      <xs:enumeration value="LeaveEncashment" />
+      <xs:enumeration value="TicketRequest" />
+      <xs:enumeration value="TicketEncashment" />
+      <xs:enumeration value="LeavePlanning" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSLeaveReqNature" nillable="true" type="tns:SDSLeaveReqNature" />
+  <xs:complexType name="SDSLeaveRequestListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q83="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q83:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmGeneralRequestList" nillable="true" type="tns:ArrayOfLeaveRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLeaveRequestListDC" nillable="true" type="tns:SDSLeaveRequestListDC" />
+  <xs:complexType name="ArrayOfLeaveRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeaveRequest" nillable="true" type="tns:LeaveRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeaveRequest" nillable="true" type="tns:ArrayOfLeaveRequest" />
+  <xs:complexType name="SDSLeaveRequestReasonCodeInfoList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q84:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q85:ArrayOfstring" />
+          <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReasonCodeList" nillable="true" type="q86:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLeaveRequestReasonCodeInfoList" nillable="true" type="tns:SDSLeaveRequestReasonCodeInfoList" />
+  <xs:complexType name="SDSLeaveTypeIdList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q87="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q87:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmdescriptionList" nillable="true" type="q88:ArrayOfstring" />
+          <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmleaveCategoryList" nillable="true" type="q89:ArrayOfstring" />
+          <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmleaveTypeIdList" nillable="true" type="q90:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLeaveTypeIdList" nillable="true" type="tns:SDSLeaveTypeIdList" />
+  <xs:complexType name="LoanRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q91="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q91:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachmentImage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeductionStartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LoanRequestId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Loan_x0020_type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Loan_x0020_value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MonthlyInstallment" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name-Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name-En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No.Of_x0020_Insatllment" type="xs:int" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkerRecid" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowItem" type="ser:guid" />
+          <xs:element minOccurs="0" name="Workflow_x0020_status" type="tns:SDSWorkflowState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoanRequest" nillable="true" type="tns:LoanRequest" />
+  <xs:complexType name="SDSLoanRequestIdIList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q92:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q93="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReqeustDescriptionList" nillable="true" type="q93:ArrayOfstring" />
+          <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmRequestIdList" nillable="true" type="q94:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLoanRequestIdIList" nillable="true" type="tns:SDSLoanRequestIdIList" />
+  <xs:complexType name="SDSLoanRequestListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q95="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q95:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmLoanRequestList" nillable="true" type="tns:ArrayOfLoanRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLoanRequestListDC" nillable="true" type="tns:SDSLoanRequestListDC" />
+  <xs:complexType name="ArrayOfLoanRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanRequest" nillable="true" type="tns:LoanRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoanRequest" nillable="true" type="tns:ArrayOfLoanRequest" />
+  <xs:complexType name="SDSLoanRequestReasonCodeList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q96="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q96:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmDescriptionList" nillable="true" type="q97:ArrayOfstring" />
+          <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmReasonCodeList" nillable="true" type="q98:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLoanRequestReasonCodeList" nillable="true" type="tns:SDSLoanRequestReasonCodeList" />
+  <xs:complexType name="LookUp">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q99="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q99:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Course_x0020_type_x0020_description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LookUp" nillable="true" type="tns:LookUp" />
+  <xs:complexType name="SDSLookupListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q100="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q100:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmList" nillable="true" type="tns:ArrayOfLookUp" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSLookupListDC" nillable="true" type="tns:SDSLookupListDC" />
+  <xs:complexType name="ArrayOfLookUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookUp" nillable="true" type="tns:LookUp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookUp" nillable="true" type="tns:ArrayOfLookUp" />
+  <xs:complexType name="SDSManagersTeamList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q101="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q101:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmnameList" nillable="true" type="q102:ArrayOfstring" />
+          <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmpersonnelNoList" nillable="true" type="q103:ArrayOfstring" />
+          <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmworkerRecIdList" nillable="true" type="q104:ArrayOflong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSManagersTeamList" nillable="true" type="tns:SDSManagersTeamList" />
+  <xs:complexType name="MedicalInsurance">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q105="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q105:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DentalLimit" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DependentRecId" type="xs:long" />
+          <xs:element minOccurs="0" name="Dependent_x0020_Name_x0020_Ar" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dependent_x0020_Name_x0020_En" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endurance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FromDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Membership_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ocular_x0020_Limir" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Policy_x0020_For" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Policy_x0020_Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Policy_x0020_level" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pregnancy_x0020_Covered" type="q105:NoYes" />
+          <xs:element minOccurs="0" name="Room" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Total_x0020_Limit" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WorkerRecid" type="xs:long" />
+          <xs:element minOccurs="0" name="Worker_x0020_Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MedicalInsurance" nillable="true" type="tns:MedicalInsurance" />
+  <xs:complexType name="SDSMedicalInsuranceListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q106="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q106:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmMedicalInsuranceList" nillable="true" type="tns:ArrayOfMedicalInsurance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSMedicalInsuranceListDC" nillable="true" type="tns:SDSMedicalInsuranceListDC" />
+  <xs:complexType name="ArrayOfMedicalInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MedicalInsurance" nillable="true" type="tns:MedicalInsurance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedicalInsurance" nillable="true" type="tns:ArrayOfMedicalInsurance" />
+  <xs:complexType name="Notification">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q107="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q107:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Created_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Due_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Notification_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Worker_x0020_Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+  <xs:complexType name="SDSNotificationListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q108="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q108:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmNotificationList" nillable="true" type="tns:ArrayOfNotification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSNotificationListDC" nillable="true" type="tns:SDSNotificationListDC" />
+  <xs:complexType name="ArrayOfNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Notification" nillable="true" type="tns:Notification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotification" nillable="true" type="tns:ArrayOfNotification" />
+  <xs:complexType name="Payslip">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q109="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q109:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmployeeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="From_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Months" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Net_x0020_salary" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PayGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaycycleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Period" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="To_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Total_x0020_Deductions" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Total_x0020_Earnings" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Year" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Payslip" nillable="true" type="tns:Payslip" />
+  <xs:complexType name="PayslipLine">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q110="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q110:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Payment_x0020_type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Source_x0020_Type" type="tns:SDSPaySlipSourceType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PayslipLine" nillable="true" type="tns:PayslipLine" />
+  <xs:simpleType name="SDSPaySlipSourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Earnings" />
+      <xs:enumeration value="Deductions" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSPaySlipSourceType" nillable="true" type="tns:SDSPaySlipSourceType" />
+  <xs:complexType name="SDSPaySlipLineInfoListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q111="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q111:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmpaySlipLineInfoList" nillable="true" type="tns:ArrayOfPayslipLine" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSPaySlipLineInfoListDC" nillable="true" type="tns:SDSPaySlipLineInfoListDC" />
+  <xs:complexType name="ArrayOfPayslipLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PayslipLine" nillable="true" type="tns:PayslipLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayslipLine" nillable="true" type="tns:ArrayOfPayslipLine" />
+  <xs:complexType name="Permission">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q112="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q112:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BTRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="Bank" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="Benefits" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="CompanyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dependent" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="EOSRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="ExcuseRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="GeneralReqeust" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="Identification" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="LeaveRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="LoanRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="OTRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="Payslip" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="PermissionLevel" type="tns:SDSPermissionLevel" />
+          <xs:element minOccurs="0" name="PersonalInfo" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="Position" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="SessionTimeOut" type="xs:int" />
+          <xs:element minOccurs="0" name="TicketRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="TrainingRequest" type="tns:SDSPermission" />
+          <xs:element minOccurs="0" name="WorkerRecId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+  <xs:simpleType name="SDSPermission">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disable" />
+      <xs:enumeration value="Enable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSPermission" nillable="true" type="tns:SDSPermission" />
+  <xs:simpleType name="SDSPermissionLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Employee" />
+      <xs:enumeration value="Manager" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSPermissionLevel" nillable="true" type="tns:SDSPermissionLevel" />
+  <xs:complexType name="Contact">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q113="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q113:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Is_x0020_Primary" type="q113:NoYes" />
+          <xs:element minOccurs="0" name="Is_x0020_Private" type="q113:NoYes" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="SDSPersonalInfoContactList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q114="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q114:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmContactList" nillable="true" type="tns:ArrayOfContact" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSPersonalInfoContactList" nillable="true" type="tns:SDSPersonalInfoContactList" />
+  <xs:complexType name="ArrayOfContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContact" nillable="true" type="tns:ArrayOfContact" />
+  <xs:complexType name="PersonalInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q115="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q115:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address_x0020_List" nillable="true" type="tns:SDSAddressListDC" />
+          <xs:element minOccurs="0" name="Address_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address_x0020_purpose" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Arabic_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Birth_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Company_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Compenstation_x0020_region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contact_x0020_List" nillable="true" type="tns:SDSPersonalInfoContactList" />
+          <xs:element minOccurs="0" name="Contact_x0020_Mobile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contact_x0020_email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Department_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="English_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" type="xs:int" />
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Job_x0020_Function_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Job_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Job_x0020_Type_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Joining_x0020_date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Line_x0020_Manager_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Marital_x0020_status" type="xs:int" />
+          <xs:element minOccurs="0" name="Old_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Perosnal_x0020_contact_x0020_emergency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Perosnal_x0020_contact_x0020_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Perosnal_x0020_contact_x0020_relationship" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Personnel_x0020_number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_Line_x0020_Manager_x0020_position" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Position_x0020_description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Probation_x0020_End_x0020_Date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonalInfo" nillable="true" type="tns:PersonalInfo" />
+  <xs:complexType name="Loaneditems">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q116="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q116:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Actual_x0020_Return_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Loan_x0020_Item_x0020_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Loaned_x0020_Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Planned_x0020_Return_x0020_Date" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Loaneditems" nillable="true" type="tns:Loaneditems" />
+  <xs:complexType name="SDSPersonalLoanListDC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q117="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q117:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmAddressList" nillable="true" type="tns:ArrayOfLoaneditems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSPersonalLoanListDC" nillable="true" type="tns:SDSPersonalLoanListDC" />
+  <xs:complexType name="ArrayOfLoaneditems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loaneditems" nillable="true" type="tns:Loaneditems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoaneditems" nillable="true" type="tns:ArrayOfLoaneditems" />
+  <xs:complexType name="SDSPersonPhotoData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q118="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q118:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmPersonPhoto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSPersonPhotoData" nillable="true" type="tns:SDSPersonPhotoData" />
+  <xs:complexType name="Policy">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q119="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q119:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Arabic_x0020_Policy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="English_x0020_Policy" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Policy" nillable="true" type="tns:Policy" />
+  <xs:complexType name="SDSWorkflowApprovalWorkItemComment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q120="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q120:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommunicatorSignIn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Is_x0020_Step" type="q120:NoYes" />
+          <xs:element minOccurs="0" name="Step_x0020_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowTrackingType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSWorkflowApprovalWorkItemComment" nillable="true" type="tns:SDSWorkflowApprovalWorkItemComment" />
+  <xs:complexType name="SDSWorkflowApprovalWorkItemHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q121="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q121:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="tns:ArrayOfSDSWorkflowApprovalWorkItemComment" />
+          <xs:element minOccurs="0" name="CorrelationId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSWorkflowApprovalWorkItemHistory" nillable="true" type="tns:SDSWorkflowApprovalWorkItemHistory" />
+  <xs:complexType name="ArrayOfSDSWorkflowApprovalWorkItemComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SDSWorkflowApprovalWorkItemComment" nillable="true" type="tns:SDSWorkflowApprovalWorkItemComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSDSWorkflowApprovalWorkItemComment" nillable="true" type="tns:ArrayOfSDSWorkflowApprovalWorkItemComment" />
+  <xs:complexType name="SDSWorkflowApprovalWorkItemList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q122="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q122:XppObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q123="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmEntityRecIdList" nillable="true" type="q123:ArrayOflong" />
+          <xs:element minOccurs="0" name="parmEntityTableId" type="xs:int" />
+          <xs:element xmlns:q124="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmNetworkAliasList" nillable="true" type="q124:ArrayOfstring" />
+          <xs:element xmlns:q125="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmNetworkDomainList" nillable="true" type="q125:ArrayOfstring" />
+          <xs:element xmlns:q126="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parmWorkItemIdList" nillable="true" type="q126:ArrayOfguid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SDSWorkflowApprovalWorkItemList" nillable="true" type="tns:SDSWorkflowApprovalWorkItemList" />
+  <xs:simpleType name="SDSExcuseNature">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Absence" />
+      <xs:enumeration value="Overtime" />
+      <xs:enumeration value="Excuse" />
+      <xs:enumeration value="Training" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SDSExcuseNature" nillable="true" type="tns:SDSExcuseNature" />
+</xs:schema>

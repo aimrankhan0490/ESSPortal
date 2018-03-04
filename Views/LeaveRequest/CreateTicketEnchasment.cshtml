@@ -1,0 +1,489 @@
+﻿@using Helper
+@{
+    ViewBag.Title = "CreateTicketEnchasment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Ticket Encashment Request")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <div class="btn-group" style="width:100%">
+                    <button type="button" class="btn btn-default col-md-8">@Resources.getDescriptionBykey("Action")</button>
+                    <button type="button" class="btn btn-default dropdown-toggle col-md-4" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" style="background: #FFFFFF">
+                        <li>
+                            <a id="btnsubmit" class="accept_leave" style="">@Resources.getDescriptionBykey("Submit")</a>
+                        </li>
+
+                        @*<li>
+                                <a href="#" class="reject_leave">Reject</a>
+                            </li>
+
+                            <li>
+                                <a href="history.html" class="history_leave">View History</a>
+                            </li>*@
+
+                    </ul>
+                </div>  <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4" for="start_date">
+                    @Resources.getDescriptionBykey("Request ID") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" id="fullname" class="form-control" readonly>
+
+                </div>
+            </div>
+            <div class="form-group  col-md-4">
+                <label class="control-label col-md-4 col-sm-4" for="end_date">
+                    @Resources.getDescriptionBykey("Request Nature") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" readonly id="reqnatutre" value="Ticket Enchasement" class="form-control">
+                    @*  <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>*@
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">
+                    @Resources.getDescriptionBykey("Request Date") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" readonly id="requestdate" class="form-control">
+                    <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Leave Type")</label>
+                <div class="col-md-6 col-sm-6">
+                    <select id="ddlleavetype" class="form-control"></select>
+                </div>
+            </div>
+            @*<div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">From Date</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="FromDate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">To Date</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="ToDate" class="form-control">
+                        <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">No Of Days </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="NoofDays" class="form-control" readonly>
+
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Balance </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="LeaveBalance" readonly class="form-control">
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Remaining </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="remaining" readonly class="form-control">
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Contact Info During Leave </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="ctctinfo" class="form-control">
+                    </div>
+                </div>*@
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Reason code")  </label>
+                <div class="col-md-6 col-sm-6">
+                    <select id="ddlreason" class="form-control"></select>
+                </div>
+            </div>
+            @*<div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Alternative Worker  </label>
+                    <div class="col-md-6 col-sm-6">
+                        <select id="ddlaltworkers" class="form-control"></select>
+                    </div>
+                </div>*@
+        </form>
+    </div>
+</div>
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>@Resources.getDescriptionBykey("Ticket Details")</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+
+            @*<div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4" for="start_date">
+                    Destination <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" id="Destination" class="form-control">
+                </div>
+            </div>*@
+            <div class="form-group  col-md-4">
+                <label class="control-label col-md-4 col-sm-4" for="end_date">
+                    @Resources.getDescriptionBykey("Number Of Tickets") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="number" min="0" step="1" id="nooftickets" class="form-control">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">
+                    @Resources.getDescriptionBykey("Tickets Balance") <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" readonly class="form-control">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-md-4 col-sm-4">@Resources.getDescriptionBykey("Ticket Remaining Balance")</label>
+                <div class="col-md-6 col-sm-6">
+                    <input type="text" readonly class="form-control">
+                </div>
+            </div>
+            @*  <div class="form-group col-md-4">
+                            <label class="control-label col-md-4 col-sm-4">Return Date</label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type="text" id="rtrndate" class="form-control">
+                            </div>
+                        </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Request Visa</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="checkbox" id="requestvisa" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Request Exit Entry</label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="checkbox" id="requestexitentry" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-md-4 col-sm-4">Salary In Advance </label>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="checkbox" id="requestsaladavance" class="form-control">
+
+                    </div>
+                </div>*@
+        </form>
+    </div>
+</div>
+<!-- --------------------------comments --------------------------- -->
+@*<div class="x_panel">
+    <div class="x_title">
+        <h2>Comments</h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+            <form class="form-horizontal form-label-left">
+
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                        Comment <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea id="comment" required="required" name="comment" class="form-control col-md-7 col-xs-12"></textarea>
+                    </div>
+                </div>
+
+                <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">
+                        Attachment <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="file" id="fileupload" accept="image/*" name="file" />
+
+                    </div>
+                </div>
+            </form>
+        </div>*@
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "@Url.Action("getrequestreasons", "LeaveRequest")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+                //  $("#reqnatutre")
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Reason--" + ' </option>';
+                $("#ddlreason").append(optionhtml1);
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlreason").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });
+        $.ajax({
+            url: "@Url.Action("getleavetypes", "LeaveRequest")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select Leave Request--" + ' </option>';
+                $("#ddlleavetype").append(optionhtml1);
+                //for (var i = 0; i < data.length; i++) {
+                //    $("#ddlleavetype").append($('<option>').text(data[i]).attr('value', data[i]));
+                //}
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlleavetype").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });
+        @*$.ajax({
+            url: "@Url.Action("GetAlternativeWorkers", "LeaveRequest")",
+            //  data: { selectedValue: selectedValue },
+            dataType: "json",
+            type: "GET",
+            error: function () {
+                alert(" An error occurred.");
+            },
+            success: function (data) {
+
+                var optionhtml1 = '<option value="' + -1 + '">' + "--Select AlterNative Worker--" + ' </option>';
+                $("#ddlaltworkers").append(optionhtml1);
+                //for (var i = 0; i < data.length; i++) {
+                //    $("#ddlleavetype").append($('<option>').text(data[i]).attr('value', data[i]));
+                //}
+                $.each(data, function (i) {
+                    debugger;
+                    $("#ddlaltworkers").append($('<option>').text(data[i]).attr('value', data[i]));
+                    //var optionhtml = '<option value="' + data[i + 1] + '">' + data[i + 1] + '</option>';
+                    //$(".ddlreason").append(optionhtml);
+                });
+            }
+        });*@
+        //$('#requestdate').datepicker({
+        //    format: "dd-mm-yyyy",
+        //    startDate: "today",
+        //    uiLibrary: 'bootstrap2',
+        //    maxViewMode: 0,
+        //    daysOfWeekDisabled: "0"
+        //});
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        //$(function () {
+        //$("#FromDate").datepicker({
+        //        format: "dd/mm/yyyy",
+        //        startDate: "today",
+        //        //uiLibrary: 'bootstrap2',
+        //        maxViewMode: 0,
+        //        daysOfWeekDisabled: "0"
+        //    });
+        //$("#ToDate").datepicker({
+        //    format: "dd-mm-yyyy",
+        //    startDate: "today",
+        //    //uiLibrary: 'bootstrap2',
+        //    maxViewMode: 0,
+        //    daysOfWeekDisabled: "0"
+        //});
+        //});
+        //$('#FromDate').on('input', function (e) {
+        //    var frmdate = $(this).val().replace(/\s/g, '');
+        //    var todate = $("#ToDate").val().replace(/\s/g, '');
+        //    if (frmdate.length == 10 && todate.length == 10) {
+        //        var oneDay = 24 * 60 * 60 * 1000;
+        //        var dtfrdate = new Date(frmdate.split('/')[2], frmdate.split('/')[1] - 1, frmdate.split('/')[0]);
+        //        var dttofate = new Date(todate.split('/')[2], todate.split('/')[1] - 1, todate.split('/')[0]);
+        //        $('#NoofDays').val(Math.round(Math.abs((dtfrdate.getTime() - dttofate.getTime()) / (oneDay))));
+        //    }
+        //});
+        //$('#ToDate').on('input', function (e) {
+        //    debugger;
+        //    var todate = $(this).val().replace(/\s/g, '');
+        //    var frmdate = $("#FromDate").val().replace(/\s/g, '');
+        //    if (frmdate.length == 10 && todate.length == 10) {
+        //        var oneDay = 24 * 60 * 60 * 1000;
+        //        var dtfrdate = new Date(frmdate.split('/')[2], frmdate.split('/')[1] - 1, frmdate.split('/')[0]);
+        //        var dttofate = new Date(todate.split('/')[2], todate.split('/')[1] - 1, todate.split('/')[0]);
+        //        $('#NoofDays').val(Math.round(Math.abs((dtfrdate.getTime() - dttofate.getTime()) / (oneDay))));
+        //    }
+        //});
+        $("#Destination").on('keyup', function (e) {
+            var val = $(this).val();
+            if (val.match(/[^a-zA-Z]/g)) {
+                $(this).val(val.replace(/[^a-zA-Z]/g, ''));
+            }
+        });
+        $("#ctctinfo").on('keyup', function (e) {
+            var val = $(this).val();
+            if (val.match(/[^a-zA-Z]/g)) {
+                $(this).val(val.replace(/[^a-zA-Z]/g, ''));
+            }
+        });
+
+        var reqtype = getUrlVars()["reqnature"];
+        if (reqtype == 0)
+            $("#reqnatutre").val("Leave Request");
+        if (reqtype == 1)
+            $("#reqnatutre").val("Leave Return");
+        if (reqtype == 2)
+            $("#reqnatutre").val("Leave Encashment");
+        if (reqtype == 3)
+            $("#reqnatutre").val("Ticket Request");
+        if (reqtype == 4)
+            $("#reqnatutre").val("Ticket Encashment");
+        if (reqtype == 5)
+            $("#reqnatutre").val("Leave Planning");
+        debugger;
+        $('#fileupload').bind('change', function () {
+            debugger;
+            // var ext = fileName.split('.').pop();
+            // alert(ext);
+            var files = $("#fileupload")[0].files[0];
+            var temp = "";
+            temp += "<br>Filename: " + files.name;
+            var ext = temp.split(".").pop();
+            if (ext == "JPEG" || ext == "PNG") { }
+            else
+                alert("Only Jpeg and Png formats");
+
+            //  alert('This file size is: ' + this.files[0].size / 1024 / 1024 + "MB");
+        });
+        var d = new Date();
+        $("#requestdate").val(d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear());
+        $('#btnsubmit').click(function () {
+            debugger;
+            var data = new FormData();
+            //var files = $("#fileupload")[0].files[0];
+            //var temp = "";
+
+
+            //var todate = $("#ToDate").val().replace(/\s/g, '');
+            //var frmdate = $("#FromDate").val().replace(/\s/g, '');
+            //if (frmdate.length == 10 && todate.length == 10) {
+            //    var oneDay = 24 * 60 * 60 * 1000;
+            //    var dtfrdate = new Date(frmdate.split('/')[2], frmdate.split('/')[1] - 1, frmdate.split('/')[0]);
+            //    var dttofate = new Date(todate.split('/')[2], todate.split('/')[1] - 1, todate.split('/')[0]);
+            //    if (Math.round(Math.abs((dtfrdate.getTime() - dttofate.getTime()) / (oneDay))) > 0) {
+            if ($('#ddlreason').val() != "-1" && $('#ddlleavetype').val() != "-1") {
+                if ( $('#nooftickets').val() != ""
+
+                    ) {
+                    //if (files != "undefined") {
+                    //if (files != null) {
+                    //    temp += "<br>Filename: " + files.name;
+                       // var ext = temp.split(".").pop();
+                        // var files = fileUpload.files;
+
+                        // Create FormData object
+                        // var fileData = new FormData();
+
+                        // Looping over all files and add it to FormData object
+                        //for (var i = 0; i < files.length; i++) {
+                        //    data.append(files[i].name, files[i]);
+                        //}
+
+                        //alert('This file size is: ' + this.files[0].size / 1024 / 1024 + "MB");
+                       // if (ext == "JPEG" || ext == "PNG") {
+                            data.append("leavetype", $('#ddlleavetype').val());
+                         //   data.append("fromdate", $("#FromDate").val());
+                           // data.append("todate", $("#ToDate").val());
+                            //data.append("contactinfo", $("#ctctinfo").val());
+                            data.append("reason", $("#ddlreason").val());
+                            //data.append("altwork", $("#ddlaltworkers").val());
+                            //data.append("destnat", $("#Destination").val());
+                            data.append("reqvisa", $("#requestvisa").attr("checked") ? "1" : "0");
+                            data.append("reqexitentry", $("#requestexitentry").attr("checked") ? "1" : "0");
+                            data.append("salinadvance", $("#requestsaladavance").attr("checked") ? "1" : "0");
+                            data.append("comments", $("#ctctinfo").val());
+                            data.append("reqnature", "4");
+                            data.append("nooftickets", $("#nooftickets").val());
+
+                            $.ajax({
+
+                                type: "POST",
+                                url: '@Url.Action("CreateNewRequestbyNature", "LeaveRequest")',
+                                traditional: true,
+                                contentType: "multipart/mixed",
+                                data: data,
+                                contentType: false,
+                                processData: false,
+                                success: successFuncDelIns,
+                                // error: errorFunc
+                            });
+                    //    }
+                    //    else
+                    //        alert("Only Jpeg and Png formats change the attachment");
+                    //}
+                    //else
+                    //    alert("Attach the File");
+                }
+                else
+                    alert("Enter Number of Tickets,Contact Info During your absence,");
+            }
+            else
+                alert("Select Alternate workers, and reasons and leavetype");
+            //    }
+            //    else
+            //                alert("From Date should greater than todate");
+            //}
+            //else
+            //            alert("Enter valid From Date and  To Date ");
+
+            function successFuncDelIns(data, Status) {
+                alert(data);
+                var url = "/LeaveRequest/TicketEnchasment";
+                window.location.href = url;
+            }
+        });
+    });
+</script>
